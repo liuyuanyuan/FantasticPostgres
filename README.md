@@ -217,7 +217,7 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 
 ### Conferences
 * [2011PostgreSQL中国用户大会（广州）](https://wiki.postgresql.org/wiki/Pgconchina2011)
-* [2012PostgreSQL中国用户大会（北京））](http://topic.it168.com/factory/PostgreSQL/)
+* [2012PostgreSQL中国用户大会（北京）](http://topic.it168.com/factory/PostgreSQL/)
 * [2013PostgreSQL中国用户大会（杭州）](http://wenku.it168.com/huiyi/721)
 * [2014PostgreSQL中国用户大会（深圳）]()
 * [2015PostgreSQL中国用户大会（北京）]()
