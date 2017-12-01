@@ -7,6 +7,7 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 
 > :elephant: Contributions welcome. Add links through pull requests or create an issue to start a discussion. Thanks :)
 
+
 ## Contents
 
 - [High-Availability](#high-availability)
