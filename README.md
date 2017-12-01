@@ -3,7 +3,7 @@
 
 [<img src="https://wiki.postgresql.org/images/a/a4/PostgreSQL_logo.3colors.svg" align="right"  width="100">](https://www.postgresql.org/)
 
-A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource and documents, based on [awesome-postgres](https://github.com/dhamaniasad/awesome-postgres).
+A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource and so on, based on [awesome-postgres](https://github.com/dhamaniasad/awesome-postgres.
 
 > :elephant: Contributions welcome. Add links through [pull requests](https://github.com/liuyuanyuan/fantastic-postgres/pulls) or create an [issue](https://github.com/liuyuanyuan/fantastic-postgres/issues) to start a discussion. Thanks :)
 
