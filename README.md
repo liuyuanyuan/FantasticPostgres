@@ -3,9 +3,9 @@
 
 [<img src="https://wiki.postgresql.org/images/a/a4/PostgreSQL_logo.3colors.svg" align="right"  width="100">](https://www.postgresql.org/)
 
-> A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource and documents, inspired by [awesome-postgres](https://github.com/dhamaniasad/awesome-postgres).
+A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource and documents, inspired by [awesome-postgres](https://github.com/dhamaniasad/awesome-postgres).
 
-:elephant: Contributions welcome. Add links through pull requests or create an issue to start a discussion. Thanks :)
+> :elephant: Contributions welcome. Add links through pull requests or create an issue to start a discussion. Thanks :)
 
 ## Contents
 
