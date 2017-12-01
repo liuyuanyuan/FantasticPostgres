@@ -29,6 +29,7 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 - [Docker images](#docker-images)
 - [Videos](#videos)
 - [Conferences](#conferences)
+- [Doucuments](#documents)
 
 ### High-Availability
 * [BDR](https://github.com/2ndQuadrant/bdr) - BiDirectional Replication - a multimaster replication system for PostgreSQL
@@ -223,6 +224,10 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [2015PostgreSQL中国用户大会（北京）]()
 * [2016PostgreSQL中国用户大会（上海）]()
 * [2017PostgreSQL中国用户大会（深圳）]()
+
+### Documents
+* [PostgreSQL Document](https://www.postgresql.org/docs/10/static/index.html)
+* [PostgreSQL文档中文翻译](https://github.com/postgres-cn)
 
 
 
