@@ -5,7 +5,7 @@
 
 A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource and documents, based on [awesome-postgres](https://github.com/dhamaniasad/awesome-postgres).
 
-> :elephant: Contributions welcome. Add links through pull requests or create an issue to start a discussion. Thanks :)
+> :elephant: Contributions welcome. Add links through [pull requests](https://github.com/liuyuanyuan/fantastic-postgres/pulls) or create an [issue](https://github.com/liuyuanyuan/fantastic-postgres/issues) to start a discussion. Thanks :)
 
 
 ## Contents
