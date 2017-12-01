@@ -1,2 +1,2 @@
 # Fantastic PostgreSQL
-## author: Liu, Yuanyuan
+## Author: Liu, Yuanyuan
