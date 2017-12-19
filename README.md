@@ -230,6 +230,6 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [PostgreSQL文档中文翻译](https://github.com/postgres-cn)
 
 ### Migration
-* [Comparison of database tools]{https://en.wikipedia.org/wiki/Comparison_of_database_tools}
+* [Comparison of database tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools)
 
 
