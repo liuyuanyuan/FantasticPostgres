@@ -217,17 +217,17 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [PGConf US Youtube chanel](https://www.youtube.com/pgconfus/) - Conference videos
 
 ### Conferences
-* [2011PostgreSQL中国用户大会（广州）](https://wiki.postgresql.org/wiki/Pgconchina2011)
-* [2012PostgreSQL中国用户大会（北京）](http://topic.it168.com/factory/PostgreSQL/)
-* [2013PostgreSQL中国用户大会（杭州）](http://wenku.it168.com/huiyi/721)
-* [2014PostgreSQL中国用户大会（深圳）]()
-* [2015PostgreSQL中国用户大会（北京）]()
-* [2016PostgreSQL中国用户大会（上海）]()
-* [2017PostgreSQL中国用户大会（深圳）]()
+* [2011 PostgreSQL China Con（广州）](https://wiki.postgresql.org/wiki/Pgconchina2011)
+* [2012 PostgreSQL China Con（北京）](http://topic.it168.com/factory/PostgreSQL/)
+* [2013 PostgreSQL China Con（杭州）](http://wenku.it168.com/huiyi/721)
+* [2014 PostgreSQL China Con（深圳）]()
+* [2015 PostgreSQL China Con（北京）]()
+* [2016 PostgreSQL China Con（上海）]()
+* [2017 PostgreSQL China Con（深圳）]()
 
 ### Documents
 * [PostgreSQL Document](https://www.postgresql.org/docs/10/static/index.html)
-* [PostgreSQL文档中文翻译](https://github.com/postgres-cn)
+* [PostgreSQL Document Chinese](https://github.com/postgres-cn)
 
 ### Migration
 * [Comparison of database tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools)
