@@ -220,6 +220,15 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [PostgreSQL Document](https://www.postgresql.org/docs/10/static/index.html)
 * [PostgreSQL Document Chinese](https://github.com/postgres-cn)
 
+### Conferences
+* [2011 PostgreSQL China Con（Guangzhou）](https://wiki.postgresql.org/wiki/Pgconchina2011)
+* [2012 PostgreSQL China Con（Beijing）](http://topic.it168.com/factory/PostgreSQL/)
+* [2013 PostgreSQL China Con（Hangzhou）](http://wenku.it168.com/huiyi/721)
+* [2014 PostgreSQL China Con（Shenzhen）]()
+* [2015 PostgreSQL China Con（Beijing）]()
+* [2016 PostgreSQL China Con（Shanghai）]()
+* [2017 PostgreSQL China Con（Shenzhen）]()
+
 ### Migration
 * [Comparison of database tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools)
 
