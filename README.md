@@ -230,6 +230,7 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [2017 PostgreSQL China Con（Shenzhen）]()
 
 ### Migration
+* [pgloader](https://github.com/liuyuanyuan/fantastic-postgres/blob/master/migrate/pgloader_intro.md)
 * [Comparison of database tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools)
 
 
