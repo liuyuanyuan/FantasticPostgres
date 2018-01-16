@@ -30,6 +30,7 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 - [Videos](#videos)
 - [Conferences](#conferences)
 - [Doucuments](#documents)
+- [Migration](#migration)
 
 ### High-Availability
 * [BDR](https://github.com/2ndQuadrant/bdr) - BiDirectional Replication - a multimaster replication system for PostgreSQL
