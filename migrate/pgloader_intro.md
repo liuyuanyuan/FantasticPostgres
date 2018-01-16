@@ -20,9 +20,9 @@
 - 5 Closing Thoughts
 
 # 关于pgloader
-[pgloader Website](https://pgloader.io/)
-[pgloader Document](http://pgloader.readthedocs.io/en/latest/)
-[pgloader Github](https://github.com/dimitri/pgloader)
+[Website](https://pgloader.io/)
+[Document](http://pgloader.readthedocs.io/en/latest/)
+[Github](https://github.com/dimitri/pgloader)
 -    pgloader 是一个 PostgreSQL 的数据加载工具，并且可以实现从当前数据库到PostgreSQL的连续迁移，使用了COPY命令。  
 -    与仅使用 COPY 或 \copy 以及使用 Foreign Data Wrapper 相比，它的主要优势在于它的事务行为，其中 pgloader 将保留单独的被拒绝数据文件，但继续尝试将好的数据复制到数据库中。 
 -    默认的PostgreSQL行为是事务性的，这意味着输入数据（文件或远程数据库）中的任何错误行将停止表的整个批量加载。
