@@ -228,7 +228,7 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [2014 PostgreSQL China Con（Shenzhen）](http://www.eventdove.com/event/7058)
 * [2015 PostgreSQL China Con（Beijing）](http://www.huodongxing.com/event/reg_submit?id=9305629513300)
 * [2016 PostgreSQL China Con（Shanghai）](http://pgconfcn2016.eventdove.com/)
-* [2017 PostgreSQL China Association Con]（Beijing）](http://postgresql621-tcwechatshare.eventdove.com/)
+* [2017 PostgreSQL China Association Con（Beijing）](http://postgresql621-tcwechatshare.eventdove.com/)
 * [2017 PostgreSQL China Con（Shenzhen）](http://postgresconf2017.eventdove.com/)
 
 
