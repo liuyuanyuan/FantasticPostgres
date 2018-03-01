@@ -219,7 +219,7 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 
 ### Documents
 * [PostgreSQL Document](https://www.postgresql.org/docs/10/static/index.html)
-* [PostgreSQL Document Chinese](https://github.com/postgres-cn)
+* [PostgreSQL Document Chinese Translation](https://github.com/postgres-cn)
 
 ### Conferences
 * [2011 PostgreSQL China Con（Guangzhou）](https://wiki.postgresql.org/wiki/Pgconchina2011)
