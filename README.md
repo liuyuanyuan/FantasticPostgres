@@ -234,7 +234,7 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 
 
 ### Migration
-* [pgloader](https://github.com/liuyuanyuan/fantastic-postgres/blob/master/migrate/pgloader_intro.md)
+* [pgloader](https://github.com/liuyuanyuan/fantastic-postgres/blob/master/pgMigrater/pgloader_intro.md)
 * [Comparison of database tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools)
 
 
