@@ -21,7 +21,6 @@ CREATE SEQUENCE seqtest
   NO CYCLE --一直达到最大值时报错，不循环， 设置为CYCLE则在最小和最大值之间循环
   CACHE 1; --最小为1
 
-
 SELECT nextval('lyy.seqtest3'); --将当前值递增并返回
 SELECT currval('lyy.seqtest3'); --返回当前值
 
@@ -29,11 +28,13 @@ SELECT currval('lyy.seqtest3'); --返回当前值
 SELECT setval('lyy.seqtest3', 11, true);  
 
 
---PG的序列可直接用于表的自增(oracle不能)
---PG--
-create table test_seq3(id int default nextval('lyy.seqtest3'), name varchar );
 
---ORACLE 12C--
+--在表的自增列中的使用
+--PG中直接可用--
+CREATE TABLE test_seq3(id int default nextval('lyy.seqtest3'), name varchar );
+--ORACLE不能直接用--
+http://www.xifenfei.com/2015/03/oracle-12c-新特性identity-columns-实现oracle自增长列功能.html
+ORACLE 12C新特性：
 CREATE TABLE TEST_SEQ
 (  ID NUMBER GENERATED ALWAYS AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 
    		CACHE 20 NOORDER  NOCYCLE  NOT NULL ENABLE,
