@@ -2,7 +2,7 @@
 
 2018年1月10日，本PostgreSQL迁移白皮书由 pgloader 负责人 Dimitri Fontaine 发布，介绍了将数据从其他数据库迁移到PostgreSQL的工具和方法论。
 
-# 迁移白皮书主要内容
+# pgloader迁移白皮书主要内容
 [PostgreSQL迁移白皮书 PDF](https://github.com/liuyuanyuan/fantastic-postgres/blob/master/migrate/MigratingToPostgreSQL.pdf)
 - 1 前言
 - 2 迁移项目
