@@ -1,4 +1,15 @@
-﻿---ORACLE vs HGDB Datatype---
+﻿---ORACLE vs PG Datatype---
+
+--Oracle XMLTYPE - PG XML --
+CREATE TABBLE test_xml(id int, x XMLTYPE);
+INSERT INTO test_xml VALUES(1, 'abc');//failed
+INSERT INTO test_xml VALUES(1, '<as>abc</as>');//successed
+
+CREATE TABBLE test_xml(id int, x XML);
+INSERT INTO test_xml VALUES(1, 'abc');//failed
+INSERT INTO test_xml VALUES(1, '<as>abc</as>');//successed
+
+结论： 在SQL中执行INSERT时XML数值都有格式要求，普通字符串都无法插入。
 
 
 --ORACLE[float, BINARY_FLOAT, BINARY_DOUBLE]--
