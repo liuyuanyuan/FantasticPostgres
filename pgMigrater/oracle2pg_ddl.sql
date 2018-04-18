@@ -1,3 +1,22 @@
+---table---
+
+--timestamp参数长度越界测试。
+create table test_time3(t timestamp(8));
+1.在PLSQL中:
+postgres-# highgo=# create table test_time3(t timestamp(8));
+ERROR:  42601: syntax error at or near "PSQL"
+第1行PSQL: Release 4.1.1
+     ^
+postgres=# WARNING:  22023: TIMESTAMP(8) precision reduced to maximum allowed, 6
+postgres-# 第1行create table test_time3(t timestamp(8));
+ERROR:  42601: syntax error at or near "WARNING"
+第1行WARNING:  22023: TIMESTAMP(8) precision reduced to maximum a...
+     ^
+
+
+2.在JDBC中:
+执行成功,查看表定义timestamp的长度变成6.
+
 
 --sequence--
 
@@ -40,7 +59,6 @@ CREATE TABLE TEST_SEQ
    		CACHE 20 NOORDER  NOCYCLE  NOT NULL ENABLE,
    NAME VARCHAR2(100)
 ); 
-
 
 
 
