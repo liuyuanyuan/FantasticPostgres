@@ -1,6 +1,6 @@
 ---table---
 
---timestamp参数长度越界测试。
+--PG timestamp参数长度越界测试，超过6时转为6，创建成功给出警告
 create table test_time3(t timestamp(8));
 1.在PLSQL中:
 postgres-# highgo=# create table test_time3(t timestamp(8));
@@ -12,14 +12,11 @@ postgres-# 第1行create table test_time3(t timestamp(8));
 ERROR:  42601: syntax error at or near "WARNING"
 第1行WARNING:  22023: TIMESTAMP(8) precision reduced to maximum a...
      ^
-
-
 2.在JDBC中:
-执行成功,查看表定义timestamp的长度变成6.
+执行成功,查看表定义timestamp的长度变成6，可以得到警告。
 
 
 --sequence--
-
 --oracle--
 CREATE SEQUENCE seqTest
 INCREMENT BY 1 -- 每次加几个
