@@ -1,5 +1,4 @@
 ---table---
-
 --PG timestamp参数长度越界测试，超过6时转为6，创建成功给出警告
 create table test_time3(t timestamp(8));
 1.在PLSQL中:
@@ -44,7 +43,6 @@ SELECT currval('lyy.seqtest3'); --返回当前值
 SELECT setval('lyy.seqtest3', 11, true);  
 
 
-
 --在表的自增列中的使用
 --PG中直接可用--
 CREATE TABLE test_seq3(id int default nextval('lyy.seqtest3'), name varchar );
@@ -56,6 +54,19 @@ CREATE TABLE TEST_SEQ
    		CACHE 20 NOORDER  NOCYCLE  NOT NULL ENABLE,
    NAME VARCHAR2(100)
 ); 
+
+
+--comment-
+
+PG:https://www.postgresql.org/docs/10/static/sql-comment.html
+Syntax：COMMENT ON <type> <name> IS '<comment>';
+
+Oracle:https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/COMMENT.html#GUID-65F447C4-6914-4823-9691-F15D52DB74D7
+Syntax: same to PG.
+
+
+
+
 
 
 
