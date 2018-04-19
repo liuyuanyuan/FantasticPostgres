@@ -14,6 +14,14 @@ ERROR:  42601: syntax error at or near "WARNING"
 2.在JDBC中:
 执行成功,查看表定义timestamp的长度变成6，可以得到警告。
 
+--view--
+Oracle CREATE VIEW: 
+https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/CREATE-VIEW.html#GUID-61D2D2B4-DACC-4C7C-89EB-7E50D9594D30
+
+PG CREATE VIEW:
+https://www.postgresql.org/docs/10/static/sql-createview.html
+
+
 
 --sequence--
 --oracle--
