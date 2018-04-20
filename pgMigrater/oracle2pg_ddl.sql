@@ -22,7 +22,6 @@ PG CREATE VIEW:
 https://www.postgresql.org/docs/10/static/sql-createview.html
 
 
-
 --sequence--
 --oracle--
 CREATE SEQUENCE seqTest
@@ -65,13 +64,12 @@ CREATE TABLE TEST_SEQ
 
 
 --comment--
-
-PG:https://www.postgresql.org/docs/10/static/sql-comment.html
+PG: https://www.postgresql.org/docs/10/static/sql-comment.html
 Syntax：
 COMMENT ON <type> <schema.parentname.name> IS '<comment>';  --add comment
 COMMENT ON <type> <schema.parentname.name> IS NULL;  --clean comment
 
-Oracle:https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/COMMENT.html#GUID-65F447C4-6914-4823-9691-F15D52DB74D7
+Oracle: https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/COMMENT.html#GUID-65F447C4-6914-4823-9691-F15D52DB74D7
 Syntax: same to PG.
 
 
