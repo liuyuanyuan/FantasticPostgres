@@ -69,3 +69,5 @@ if( geom.getType() = Geometry.POLYGON ) {
   } 
 }
 The JavaDoc for the extension objects provides a reference for the various data accessor functions in the geometric objects.
+
+
