@@ -3,7 +3,9 @@ PostGis Jdbc: https://github.com/postgis/postgis-java
 
 I  Install and use PostGis in PostgreSQL:
 1. install
-(to write)
+  two ways:
+  a. (Only for win)Install postgresql by "EDB binary Installer" and Install postgis bundle by "Aplication Stack Builder".
+  b. Install postgresql and postgis separately.
 2. create postgis extension and use
 CREATE EXTENSION postgis;
 CREATE table test_geo(id int, c geometry);
@@ -12,7 +14,7 @@ insert into test_geo values(1,st_transform(st_geomfromtext('POINT(10070507.65028
 
 II PostGis Jdbc Practice(ref doc)
 jar：postgresql-jdbc.jar , postgis-jdbc.jar , postgis-jdbc-jtsparser.jar
-
+java:
 5.2. Java Clients (JDBC)
 Java clients can access PostGIS "geometry" objects in the PostgreSQL database either directly as text representations or using the JDBC extension objects bundled with PostGIS. In order to use the extension objects, the "postgis.jar" file must be in your CLASSPATH along with the "postgresql.jar" JDBC driver package.
 
