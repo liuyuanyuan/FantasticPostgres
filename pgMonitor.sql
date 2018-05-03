@@ -39,14 +39,14 @@ telegraf
 
 6 conifg Telegraf 
 sudo vim /etc/telegraf/telegraf.conf
-## 修改内容如下
+## config following content
 [[outputs.influxdb]]
-  urls = ["http://localhost:8086"]  #infulxdb地址
-  database = "telegraf" #数据库
+  urls = ["http://localhost:8086"]  #infulxdb host address
+  database = "telegraf" #db name
   precision = "s"
   timeout = "5s"
-  username = "admin" #帐号
-  password = "admin" #密码
+  username = "admin" #user
+  password = "admin" #pwd
   retention_policy = ""
   
 sudo systemctl restart telegraf
@@ -68,6 +68,7 @@ password:admin
 ---save and test.
 
 customize dashboard:
+new - title - .... 
 
 
 
