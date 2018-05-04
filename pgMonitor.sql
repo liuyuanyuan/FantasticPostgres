@@ -72,8 +72,3 @@ password:admin
 new - title - new graph ...
 
 
-
-
-
-
-
