@@ -55,21 +55,21 @@ sudo systemctl restart telegraf
 sudo systemctl status grafana-server
 
 8 browse grafana monitor web
-browse: http://192.168.102.41:3000/dashboard/new
+8.1 browse: http://192.168.102.41:3000/dashboard/new
+Using PostgreSQL in Grafana: http://docs.grafana.org/features/datasources/postgres/
 
-config datasource:
----input:
+8.2 config datasource:
+---input---
 Name:telegraf
 Type:InfluxDB
 url:http://influxdb-host:8086
 Database:telegraf
 user:admin
 password:admin
----save and test.
+---save and test---
 
-customize dashboard:
-new - title - new graph 
-Using PostgreSQL in Grafana: http://docs.grafana.org/features/datasources/postgres/
+8.3 customize dashboard:
+new - title - new graph ...
 
 
 
