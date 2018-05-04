@@ -13,7 +13,7 @@ wget https://dl.influxdata.com/influxdb/releases/influxdb-1.5.2.x86_64.rpm
 sudo yum localinstall influxdb-1.5.2.x86_64.rpm
 
 2 [Monitor]Grafana doc: https://grafana.com/grafana/download
-yum install  https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.1.0-1.x86_64.rpm 
+sudo yum install  https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.1.0-1.x86_64.rpm 
 
 3 [Proxy]Telegraf doc: https://portal.influxdata.com/downloads
 wget https://dl.influxdata.com/telegraf/releases/telegraf-1.6.1-1.x86_64.rpm
