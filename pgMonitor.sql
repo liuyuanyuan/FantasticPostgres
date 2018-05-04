@@ -68,7 +68,8 @@ password:admin
 ---save and test.
 
 customize dashboard:
-new - title - .... 
+new - title - new graph 
+Using PostgreSQL in Grafana: http://docs.grafana.org/features/datasources/postgres/
 
 
 
