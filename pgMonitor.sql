@@ -2,7 +2,7 @@ Postgres Monitor
 Monitor system table: https://www.postgresql.org/docs/10/static/monitoring-stats.html
 
 
-Universal Monitor (grafana+influxdb+telegraf)
+Universal Monitor CO(grafana+influxdb+telegraf compatible with PostgreSQL)
 I win ref: http://www.cnblogs.com/Bug-Hunter/p/7428774.html
          http://blog.51cto.com/11512826/2056183?cid=698642
 1. download three zip files;
