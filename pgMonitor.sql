@@ -3,11 +3,24 @@ Monitor system table: https://www.postgresql.org/docs/10/static/monitoring-stats
 
 
 Universal Monitor (grafana+influxdb+telegraf)
-linux ref: http://www.cnblogs.com/Scissors/p/5977670.html
-           https://www.cnblogs.com/renqiqiang/p/8659772.html
-win ref: http://www.cnblogs.com/Bug-Hunter/p/7428774.html
+I win ref: http://www.cnblogs.com/Bug-Hunter/p/7428774.html
          http://blog.51cto.com/11512826/2056183?cid=698642
+1. download three zip files;
+2. unzip file and config;
+3. make StartAll.bat(with following content) and run it:
+--------------------------------
+@echo off
+start cmd /k "cd/d %~dp0\influxdb-1.5.2_windows_amd64\influxdb-1.5.2-1&&influxd -config influxdb.conf"
+echo started influxdb
+start cmd /k "cd/d %~dp0\telegraf-1.6.1_windows_amd64\telegraf&&telegraf -config telegraf.conf"
+start cmd /k "cd/d %~dp0\grafana-5.1.0.windows-x64\grafana-5.1.0\bin&&grafana-server.exe"
+ping -n 5 127.0>null
+explorer http://127.0.0.1:3000
+--------------------------------
 
+
+II linux ref: http://www.cnblogs.com/Scissors/p/5977670.html
+           https://www.cnblogs.com/renqiqiang/p/8659772.html
 1 [DB]influxdb doc: https://portal.influxdata.com/downloads
 wget https://dl.influxdata.com/influxdb/releases/influxdb-1.5.2.x86_64.rpm
 sudo yum localinstall influxdb-1.5.2.x86_64.rpm
