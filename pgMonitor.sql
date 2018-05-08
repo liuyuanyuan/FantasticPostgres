@@ -21,6 +21,7 @@ explorer http://127.0.0.1:3000
 
 II linux ref: http://www.cnblogs.com/Scissors/p/5977670.html
            https://www.cnblogs.com/renqiqiang/p/8659772.html
+           (Grafana) http://www.ywnds.com/?p=5903 
 1 [DB]influxdb doc: https://portal.influxdata.com/downloads
 wget https://dl.influxdata.com/influxdb/releases/influxdb-1.5.2.x86_64.rpm
 sudo yum localinstall influxdb-1.5.2.x86_64.rpm
