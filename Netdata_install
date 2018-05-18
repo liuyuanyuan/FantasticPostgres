@@ -1,0 +1,40 @@
+Linux one liner
+For all Linux systems, you can use this one liner to install the git version of netdata:
+# basic netdata installation
+bash <(curl -Ss https://my-netdata.io/kickstart.sh)
+
+# or
+
+# install required packages for all netdata plugins
+bash <(curl -Ss https://my-netdata.io/kickstart.sh) all
+
+========================================================================================
+
+ --- Installing netdata... --- 
+[/usr/src/netdata.git]# ./netdata-installer.sh -u 
+
+  ^
+  |.-.   .-.   .-.   .-.   .  netdata                                        
+  |   '-'   '-'   '-'   '-'   real-time performance monitoring, done right!  
+  +----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+--->
+
+
+  You are about to build and install netdata to your system.
+
+  It will be installed at these locations:
+
+   - the daemon     at /usr/sbin/netdata
+   - config files   in /etc/netdata
+   - web files      in /usr/share/netdata
+   - plugins        in /usr/libexec/netdata
+   - cache files    in /var/cache/netdata
+   - db files       in /var/lib/netdata
+   - log files      in /var/log/netdata
+   - pid file       at /var/run/netdata.pid
+   - logrotate file at /etc/logrotate.d/netdata
+
+  This installer allows you to change the installation path.
+  Press Control-C and run the same command with --help for help.
+
+Press ENTER to build and install netdata to your system > 
+
