@@ -9,6 +9,8 @@ bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 bash <(curl -Ss https://my-netdata.io/kickstart.sh) all
 
 ========================================================================================
+After Linux one liner basic netdata isntallation, I got some output like:
+
 
  --- Installing netdata... --- 
 [/usr/src/netdata.git]# ./netdata-installer.sh -u 
@@ -37,4 +39,231 @@ bash <(curl -Ss https://my-netdata.io/kickstart.sh) all
   Press Control-C and run the same command with --help for help.
 
 Press ENTER to build and install netdata to your system > 
+
+
+
+
+-- Restore user edited netdata configuration files --- 
+ --- Fix generated files permissions --- 
+[/usr/src/netdata.git]# find ./system/ -type f -a \! -name \*.in -a \! -name Makefile\* -a \! -name \*.conf -a \! -name \*.service -a \! -name \*.logrotate -exec chmod 755 \{\} \; 
+ OK   
+
+ --- Add user netdata to required user groups --- 
+Adding netdata user group ...
+[/usr/src/netdata.git]# groupadd -r netdata 
+ OK   
+
+Adding netdata user account with home /var/lib/netdata ...
+[/usr/src/netdata.git]# useradd -r -g netdata -c netdata -s /sbin/nologin --no-create-home -d /var/lib/netdata netdata 
+ OK   
+
+Group 'docker' does not exist.
+Group 'nginx' does not exist.
+Group 'varnish' does not exist.
+Group 'haproxy' does not exist.
+Adding netdata user to the adm group ...
+[/usr/src/netdata.git]# usermod -a -G adm netdata 
+ OK   
+
+Group 'nsd' does not exist.
+Group 'proxy' does not exist.
+Group 'squid' does not exist.
+Group 'ceph' does not exist.
+ --- Install logrotate configuration for netdata --- 
+[/usr/src/netdata.git]# cp system/netdata.logrotate /etc/logrotate.d/netdata 
+ OK   
+
+[/usr/src/netdata.git]# chmod 644 /etc/logrotate.d/netdata 
+ OK   
+
+ --- Read installation options from netdata.conf --- 
+
+    Permissions
+    - netdata user     : netdata
+    - netdata group    : netdata
+    - web files user   : netdata
+    - web files group  : netdata
+    - root user        : root
+
+    Directories
+    - netdata conf dir : /etc/netdata
+    - netdata log dir  : /var/log/netdata
+    - netdata run dir  : /var/run
+    - netdata lib dir  : /var/lib/netdata
+    - netdata web dir  : /usr/share/netdata/web
+    - netdata cache dir: /var/cache/netdata
+
+    Other
+    - netdata port     : 19999
+
+ --- Fix permissions of netdata directories (using user 'netdata') --- 
+[/usr/src/netdata.git]# chown -R root:netdata /etc/netdata 
+ OK   
+
+[/usr/src/netdata.git]# find /etc/netdata -type f -exec chmod 0640 \{\} \; 
+ OK   
+
+[/usr/src/netdata.git]# find /etc/netdata -type d -exec chmod 0755 \{\} \; 
+ OK   
+
+[/usr/src/netdata.git]# chown -R netdata:netdata /usr/share/netdata/web 
+ OK   
+
+[/usr/src/netdata.git]# find /usr/share/netdata/web -type f -exec chmod 0664 \{\} \; 
+ OK   
+
+[/usr/src/netdata.git]# find /usr/share/netdata/web -type d -exec chmod 0775 \{\} \; 
+ OK   
+
+[/usr/src/netdata.git]# chown -R netdata:netdata /var/lib/netdata 
+ OK   
+
+[/usr/src/netdata.git]# chown -R netdata:netdata /var/cache/netdata 
+ OK   
+
+[/usr/src/netdata.git]# chown -R netdata:netdata /var/log/netdata 
+ OK   
+
+[/usr/src/netdata.git]# chmod 755 /var/log/netdata 
+ OK   
+
+[/usr/src/netdata.git]# chown netdata:root /var/log/netdata 
+ OK   
+
+[/usr/src/netdata.git]# chown -R root /usr/libexec/netdata 
+ OK   
+
+[/usr/src/netdata.git]# find /usr/libexec/netdata -type d -exec chmod 0755 \{\} \; 
+ OK   
+
+[/usr/src/netdata.git]# find /usr/libexec/netdata -type f -exec chmod 0644 \{\} \; 
+ OK   
+
+[/usr/src/netdata.git]# find /usr/libexec/netdata -type f -a -name \*.plugin -exec chmod 0755 \{\} \; 
+ OK   
+
+[/usr/src/netdata.git]# find /usr/libexec/netdata -type f -a -name \*.sh -exec chmod 0755 \{\} \; 
+ OK   
+
+[/usr/src/netdata.git]# chown root:netdata /usr/libexec/netdata/plugins.d/apps.plugin 
+ OK   
+
+[/usr/src/netdata.git]# chmod 0750 /usr/libexec/netdata/plugins.d/apps.plugin 
+ OK   
+
+[/usr/src/netdata.git]# setcap cap_dac_read_search\,cap_sys_ptrace+ep /usr/libexec/netdata/plugins.d/apps.plugin 
+ OK   
+
+[/usr/src/netdata.git]# chown root:netdata /usr/libexec/netdata/plugins.d/cgroup-network 
+ OK   
+
+[/usr/src/netdata.git]# chmod 4750 /usr/libexec/netdata/plugins.d/cgroup-network 
+ OK   
+
+[/usr/src/netdata.git]# chown root /usr/libexec/netdata/plugins.d/cgroup-network-helper.sh 
+ OK   
+
+[/usr/src/netdata.git]# chmod 0550 /usr/libexec/netdata/plugins.d/cgroup-network-helper.sh 
+ OK   
+
+[/usr/src/netdata.git]# chmod a+rX /usr/libexec 
+ OK   
+
+[/usr/src/netdata.git]# chmod a+rX /usr/share/netdata 
+ OK   
+
+ --- Install netdata at system init --- 
+Installing systemd service...
+[/usr/src/netdata.git]# cp system/netdata.service /etc/systemd/system/netdata.service 
+ OK   
+
+[/usr/src/netdata.git]# systemctl daemon-reload 
+ OK   
+
+[/usr/src/netdata.git]# systemctl enable netdata 
+Created symlink from /etc/systemd/system/multi-user.target.wants/netdata.service to /etc/systemd/system/netdata.service.
+ OK   
+
+ --- Start netdata --- 
+[/usr/src/netdata.git]# /bin/systemctl stop netdata 
+ OK   
+
+[/usr/src/netdata.git]# /bin/systemctl restart netdata 
+ OK   
+
+OK. NetData Started!
+
+
+-------------------------------------------------------------------------------
+
+Downloading default configuration from netdata...
+[/usr/src/netdata.git]# curl -s -o /etc/netdata/netdata.conf.new http://localhost:19999/netdata.conf 
+ OK   
+
+[/usr/src/netdata.git]# mv /etc/netdata/netdata.conf.new /etc/netdata/netdata.conf 
+ OK   
+
+ OK  New configuration saved for you to edit at /etc/netdata/netdata.conf 
+
+[/usr/src/netdata.git]# chown netdata /etc/netdata/netdata.conf 
+ OK   
+
+[/usr/src/netdata.git]# chmod 0664 /etc/netdata/netdata.conf 
+ OK   
+
+ --- Check KSM (kernel memory deduper) --- 
+
+Memory de-duplication instructions
+
+You have kernel memory de-duper (called Kernel Same-page Merging,
+or KSM) available, but it is not currently enabled.
+
+To enable it run:
+
+    echo 1 >/sys/kernel/mm/ksm/run
+    echo 1000 >/sys/kernel/mm/ksm/sleep_millisecs
+
+If you enable it, you will save 40-60% of netdata memory.
+
+ --- Check version.txt --- 
+ --- Check apps.plugin --- 
+ --- Generate netdata-uninstaller.sh --- 
+ --- Basic netdata instructions --- 
+
+netdata by default listens on all IPs on port 19999,
+so you can access it with:
+
+  http://this.machine.ip:19999/
+
+To stop netdata run:
+
+  systemctl stop netdata
+
+To start netdata run:
+
+  systemctl start netdata
+
+
+Uninstall script generated: ./netdata-uninstaller.sh
+Update script generated   : ./netdata-updater.sh
+
+netdata-updater.sh can work from cron. It will trigger an email from cron
+only if it fails (it does not print anything when it can update netdata).
+ --- Installing netdata-updater at cron --- 
+[/usr/src/netdata.git]# ln -s /usr/src/netdata.git/netdata-updater.sh /etc/cron.daily/netdata-updater 
+ OK   
+
+
+ --- We are done! --- 
+
+  ^
+  |.-.   .-.   .-.   .-.   .-.   .  netdata                          .-.   .-
+  |   '-'   '-'   '-'   '-'   '-'   is installed and running now!  -'   '-'  
+  +----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+--->
+
+  enjoy real-time performance and health monitoring...
+
+ OK   
+
+
 
