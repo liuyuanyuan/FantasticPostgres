@@ -1,3 +1,6 @@
+Netdata Github wiki:  https://github.com/firehol/netdata/wiki/Installation#linux-one-liner
+
+1. Installation
 Linux one liner
 For all Linux systems, you can use this one liner to install the git version of netdata:
 # basic netdata installation
@@ -264,6 +267,19 @@ only if it fails (it does not print anything when it can update netdata).
   enjoy real-time performance and health monitoring...
 
  OK   
+
+
+
+
+2. Browse and Working with netdata
+You can start netdata by executing it with /usr/sbin/netdata (the installer will also start it).
+
+You can stop netdata by killing it with killall netdata. You can stop and start netdata at any point. Netdata saves on exit its round robbin database to /var/cache/netdata so that it will continue from where it stopped the last time.
+
+Access to the web site, for all graphs, is by default on port 19999, so go to:
+
+http://127.0.0.1:19999/
+You can get the running config file at any time, by accessing http://127.0.0.1:19999/netdata.conf.
 
 
 
