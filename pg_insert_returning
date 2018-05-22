@@ -1,4 +1,6 @@
 How to Run a Bulk INSERT .. RETURNING Statement With Oracle and JDBC
+(https://blog.jooq.org/2018/05/02/how-to-run-a-bulk-insert-returning-statement-with-oracle-and-jdbc/)
+
 When inserting records into SQL databases, we often want to fetch back generated IDs and possibly other trigger, sequence, or default generated values. Let’s assume we have the following table:
 
 -- DB2
