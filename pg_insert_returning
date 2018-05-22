@@ -1,0 +1,183 @@
+How to Run a Bulk INSERT .. RETURNING Statement With Oracle and JDBC
+When inserting records into SQL databases, we often want to fetch back generated IDs and possibly other trigger, sequence, or default generated values. Let’s assume we have the following table:
+
+-- DB2
+CREATE TABLE x (
+  i INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
+  j VARCHAR(50), 
+  k DATE DEFAULT CURRENT_DATE
+);
+ 
+-- PostgreSQL
+CREATE TABLE x (
+  i SERIAL4 PRIMARY KEY, 
+  j VARCHAR(50), 
+  k DATE DEFAULT CURRENT_DATE
+);
+ 
+-- Oracle
+CREATE TABLE x (
+  i INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, 
+  j VARCHAR2(50), 
+  k DATE DEFAULT SYSDATE
+);
+
+
+DB2
+DB2 is the only database currently supported by jOOQ, which implements the SQL standard according to which we can SELECT from any INSERT statement, including:
+
+SELECT *
+FROM FINAL TABLE (
+  INSERT INTO x (j)
+  VALUES ('a'), ('b'), ('c')
+);
+The above query returns:
+
+I |J |K          |
+--|--|-----------|
+1 |a |2018-05-02 |
+2 |b |2018-05-02 |
+3 |c |2018-05-02 |
+Pretty neat! This query can simply be run like any other query in JDBC, and you don’t have to go through any hassles.
+
+
+PostgreSQL and Firebird
+These databases have a vendor specific extension that does the same thing, almost as powerful:
+
+-- Simple INSERT .. RETURNING query
+INSERT INTO x (j)
+VALUES ('a'), ('b'), ('c')
+RETURNING *;
+ 
+-- If you want to do more fancy stuff
+WITH t AS (
+  INSERT INTO x (j)
+  VALUES ('a'), ('b'), ('c')
+  RETURNING *
+)
+SELECT * FROM t;
+Both syntaxes work equally well, the latter is just as powerful as DB2’s, where the result of an insertion (or update, delete, merge) can be joined to other tables. Again, no problem with JDBC
+
+
+Oracle
+In Oracle, this is a bit more tricky. The Oracle SQL language doesn’t have an equivalent of DB2’s FINAL TABLE (DML statement). The Oracle PL/SQL language, however, does support the same syntax as PostgreSQL and Firebird. This is perfectly valid PL/SQL
+
+-- Create a few auxiliary types first
+CREATE TYPE t_i AS TABLE OF NUMBER(38);
+/
+CREATE TYPE t_j AS TABLE OF VARCHAR2(50);
+/
+CREATE TYPE t_k AS TABLE OF DATE;
+/
+ 
+DECLARE
+  -- These are the input values
+  in_j t_j := t_j('a', 'b', 'c');
+   
+  out_i t_i;
+  out_j t_j;
+  out_k t_k;
+   
+  c1 SYS_REFCURSOR;
+  c2 SYS_REFCURSOR;
+  c3 SYS_REFCURSOR;
+BEGIN
+ 
+  -- Use PL/SQL's FORALL command to bulk insert the
+  -- input array type and bulk return the results
+  FORALL i IN 1 .. in_j.COUNT
+    INSERT INTO x (j)
+    VALUES (in_j(i))
+    RETURNING i, j, k
+    BULK COLLECT INTO out_i, out_j, out_k;
+   
+  -- Fetch the results and display them to the console
+  OPEN c1 FOR SELECT * FROM TABLE(out_i);  
+  OPEN c2 FOR SELECT * FROM TABLE(out_j);  
+  OPEN c3 FOR SELECT * FROM TABLE(out_k); 
+   
+  dbms_sql.return_result(c1);
+  dbms_sql.return_result(c2);
+  dbms_sql.return_result(c3);
+END;
+/
+A bit verbose, but it has the same effect. Now, from JDBC:
+
+try (Connection con = DriverManager.getConnection(url, props);
+    Statement s = con.createStatement();
+ 
+    // The statement itself is much more simple as we can
+    // use OUT parameters to collect results into, so no
+    // auxiliary local variables and cursors are needed
+    CallableStatement c = con.prepareCall(
+        "DECLARE "
+      + "  v_j t_j := ?; "
+      + "BEGIN "
+      + "  FORALL j IN 1 .. v_j.COUNT "
+      + "    INSERT INTO x (j) VALUES (v_j(j)) "
+      + "    RETURNING i, j, k "
+      + "    BULK COLLECT INTO ?, ?, ?; "
+      + "END;")) {
+ 
+    try {
+ 
+        // Create the table and the auxiliary types
+        s.execute(
+            "CREATE TABLE x ("
+          + "  i INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,"
+          + "  j VARCHAR2(50),"
+          + "  k DATE DEFAULT SYSDATE"
+          + ")");
+        s.execute("CREATE TYPE t_i AS TABLE OF NUMBER(38)");
+        s.execute("CREATE TYPE t_j AS TABLE OF VARCHAR2(50)");
+        s.execute("CREATE TYPE t_k AS TABLE OF DATE");
+ 
+        // Bind input and output arrays
+        c.setArray(1, ((OracleConnection) con).createARRAY(
+            "T_J", new String[] { "a", "b", "c" })
+        );
+        c.registerOutParameter(2, Types.ARRAY, "T_I");
+        c.registerOutParameter(3, Types.ARRAY, "T_J");
+        c.registerOutParameter(4, Types.ARRAY, "T_K");
+ 
+        // Execute, fetch, and display output arrays
+        c.execute();
+        Object[] i = (Object[]) c.getArray(2).getArray();
+        Object[] j = (Object[]) c.getArray(3).getArray();
+        Object[] k = (Object[]) c.getArray(4).getArray();
+ 
+        System.out.println(Arrays.asList(i));
+        System.out.println(Arrays.asList(j));
+        System.out.println(Arrays.asList(k));
+    }
+    finally {
+        try {
+            s.execute("DROP TYPE t_i");
+            s.execute("DROP TYPE t_j");
+            s.execute("DROP TYPE t_k");
+            s.execute("DROP TABLE x");
+        }
+        catch (SQLException ignore) {}
+    }
+}
+The above code will display:
+
+[1, 2, 3]
+[a, b, c]
+[2018-05-02 10:40:34.0, 2018-05-02 10:40:34.0, 2018-05-02 10:40:34.0]
+Exactly what we wanted.
+
+
+jOOQ support
+A future version of will emulate the above PL/SQL block from the jOOQ INSERT .. RETURNING statement:
+
+DSL.using(configuration)
+   .insertInto(X)
+   .columns(X.J)
+   .values("a")
+   .values("b")
+   .values("c")
+   .returning(X.I, X.J, X.K)
+   .fetch();
+This will correctly emulate the query for all of the databases that natively support the syntax. In the case of Oracle, since jOOQ cannot create nor assume any SQL TABLE types, PL/SQL types from the DBMS_SQL package will be used
+
