@@ -233,8 +233,10 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [2017 PostgreSQL China Con（Shenzhen）](http://postgresconf2017.eventdove.com/)
 
 
-### Migration
+### Migration/Sync
 * [pgloader](https://github.com/liuyuanyuan/fantastic-postgres/blob/master/pgMigrater/pgloader/pgloader_intro.md)
 * [Comparison of database tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools)
+### ETL
+* [Data Integration (or Kettle)](https://community.hitachivantara.com/docs/DOC-1009855)
 
 
