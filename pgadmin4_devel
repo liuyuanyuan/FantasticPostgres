@@ -1,0 +1,16 @@
+1.env
+os： centos7
+
+dependency：
+Qt install： https://segmentfault.com/a/1190000008476086
+python2.7+ install
+python-devel install
+
+Add ../Qt/bin to PATH.
+
+2.
+cd $PGADMIN4_SRC/runtime 
+qmake
+make
+
+
