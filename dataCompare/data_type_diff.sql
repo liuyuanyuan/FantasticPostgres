@@ -32,6 +32,16 @@ lyy2=# delete from float2 where id= 1.22222221::real;
 DELETE 1
 (real'全精度查询结果' 或者 全精度查询结果::real 可以删掉)
 
+insert into float2 values(1.33, 3);
+select * from float2;
+   id    | c1
+---------+----
+1.33000004 |  3
+
+select real'1.33000004', real'1.33'
+-----------+------------
+1.33000004 | 1.33000004
+
 ==oracle number - PG numeric==
 任意精度类型，是精确的数字类型，可以通差值来比较。
 
