@@ -11,29 +11,26 @@ create table float2(id real primary key, c1 int);
 insert into float2 values(1.11111111, 1);
 insert into float2 values(1.22222222, 2);
 
-lyy2=# select * from float2;
+select * from float2;
    id    | c1
 ---------+----
- 1.11111 |  1
- 1.22222 |  2
+1.11111116 |  1
+1.22222221 |  2
 (2 行记录)
 
-lyy2=# delete from float2 where id = 1.11111;
+delete from float2 where id = 1.11111;
 DELETE 0
 （没有删掉）
-lyy2=# delete from float2 where id=1.11111111;
+delete from float2 where id=1.11111111;
 DELETE 0
 （没有删掉）
-lyy2=# select * from float2;
-   id    | c1
----------+----
- 1.11111 |  1
- 1.22222 |  2
-(2 行记录)
-lyy2=# delete from float2 where id= real'1.11111111';
+
+delete from float2 where id= real'1.11111111';
 DELETE 1
-(real'原始值'可以删掉)
-
+(real'原始值' 或者 原始值::real 可以删掉)
+lyy2=# delete from float2 where id= 1.22222221::real;
+DELETE 1
+(real'全精度查询结果' 或者 全精度查询结果::real 可以删掉)
 
 ==oracle number - PG numeric==
 任意精度类型，是精确的数字类型，可以通差值来比较。
