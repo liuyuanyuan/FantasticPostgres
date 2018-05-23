@@ -1,4 +1,4 @@
-# PG GUI Admin and Dev Tool
+# PG GUI Database IDE Tool
 
 ## Desktop Admin
 * [DataGrid](https://www.jetbrains.com/datagrip/?fromMenu)
