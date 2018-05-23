@@ -235,9 +235,14 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [2017 PostgreSQL China Con（Shenzhen）](http://postgresconf2017.eventdove.com/)
 
 
-### Migration/Sync
+### Migration
+* [SQLine Data](http://www.sqlines.com/home)
 * [pgloader](https://github.com/liuyuanyuan/fantastic-postgres/blob/master/pgMigrater/pgloader/pgloader_intro.md)
 * [Comparison of database tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools)
+* [Oracle_to_Postgres_Conversion](https://wiki.postgresql.org/wiki/Oracle_to_Postgres_Conversion)
+* [Ispirer Migration Knowledge Base]](http://wiki.ispirer.com/sqlways)
+### DB Sync
+* [HVR](https://www.hvr-software.com)
 ### ETL
 * [Data Integration (or Kettle)](https://community.hitachivantara.com/docs/DOC-1009855)
 
