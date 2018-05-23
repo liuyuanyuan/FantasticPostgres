@@ -1,7 +1,7 @@
 # PG GUI Database IDE Tool
 
 ## Desktop Admin
-- [DataGrid](https://www.jetbrains.com/datagrip/?fromMenu)
+* [DataGrid](https://www.jetbrains.com/datagrip/?fromMenu)
  Cross-Platform IDE for multi Databases & SQL 
  By JetBrains
 
