@@ -3,7 +3,7 @@
 Oracle浮点类型：float，binary_float，binary_double
 PG浮点类型： double precision (float, real) 
 
-浮点类型的特点是不精确的，存储的数据不精确，在oracle和pg中均是如此。
+浮点类型的特点是不精确的，存储的数据不精确，并且存的数据与存入时不一定相同，在oracle和pg中均是如此。
 因此不适合用作主键或者where条件。也不能直接用来比对。
 
 --PG example--
@@ -36,7 +36,7 @@ DELETE 1
 
 
 ==oracle number - PG numeric==
-是精确的数字类型，可以通差值来比较。
+任意精度类型，是精确的数字类型，可以通差值来比较。
 
 ==Oracle Date/Timestamp - PG Timestamp==
 统一格式化后可以比较。
