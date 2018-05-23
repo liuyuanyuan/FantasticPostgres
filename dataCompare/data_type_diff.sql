@@ -30,6 +30,10 @@ lyy2=# select * from float2;
  1.11111 |  1
  1.22222 |  2
 (2 行记录)
+lyy2=# delete from float2 where id= real'1.11111111';
+DELETE 1
+(real'原始值'可以删掉)
+
 
 ==oracle number - PG numeric==
 是精确的数字类型，可以通差值来比较。
