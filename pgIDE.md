@@ -30,12 +30,12 @@
 
 ## Web Admin
 * [pgAdmin4 based on pgAdmin3]()
- python web GUI.
- Open source and free
+python web GUI.
+[Open source and free](https://github.com/postgres/pgadmin4)
  
 * [phpPgAdmin]()
 php web IDE 
-Open source and free
+[Open source and free](https://github.com/xzilla/phppgadmin)
 
 * [Adminer]()
 php web IDE
