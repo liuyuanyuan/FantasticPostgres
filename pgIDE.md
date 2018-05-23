@@ -1,4 +1,4 @@
-# PG GUI Database IDE Tool
+# PG GUI Database IDE(admin, dev, model) Tool
 
 ## [Comparison_of_database_tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools)
 
@@ -24,8 +24,19 @@
  for both desktop and web GUI.
  Open source and free
 
+* [DBForge Studio for PG](https://www.devart.com/dbforge/postgresql/studio/)
+* [DBForge Data Compara](https://www.devart.com/dbforge/postgresql/datacompare/)
+
 
 ## Web Admin
+
+* [phpPgAdmin]()
+php web IDE 
+Open source and free
+
+* [Adminer]()
+php web IDE
+Open source and free
 
 
  
