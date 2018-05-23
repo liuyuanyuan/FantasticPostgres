@@ -128,10 +128,7 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [PoWA](http://dalibo.github.io/powa/) - PostgreSQL Workload Analyzer gathers performance stats and provides real-time charts and graphs to help monitor and tune your PostgreSQL servers.
 
 ### Utilities
-* [apgdiff](https://www.apgdiff.com/) - Compares two database dump files and creates output with DDL statements that can be used to update old database schema to new one.
 * [ERAlchemy](https://github.com/Alexis-benoist/eralchemy) - ERAlchemy generates Entity Relation (ER) diagram from databases.
-* [mysql-postgresql-converter](https://github.com/lanyrd/mysql-postgresql-converter) - Lanyrd's MySQL to PostgreSQL conversion script.
-* [ora2pg](http://ora2pg.darold.net) - Perl module to export an Oracle database schema to a PostgreSQL compatible schema.
 * [pg\_activity](https://github.com/julmon/pg_activity) - top like application for PostgreSQL server activity monitoring.
 * [pg-formatter](https://github.com/gajus/pg-formatter) - A PostgreSQL SQL syntax beautifier (Node.js).
 * [pganalyze](https://pganalyze.com) - PostgreSQL Performance Monitoring (Commercial Software).
@@ -237,13 +234,17 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 
 ### Migration
 * [SQLine Data](http://www.sqlines.com/home)
+* [mysql-postgresql-converter](https://github.com/lanyrd/mysql-postgresql-converter) - Lanyrd's MySQL to PostgreSQL conversion script.
+* [ora2pg](http://ora2pg.darold.net) - Perl module to export an Oracle database schema to a PostgreSQL compatible schema.
 * [pgloader](https://github.com/liuyuanyuan/fantastic-postgres/blob/master/pgMigrater/pgloader/pgloader_intro.md)
 * [Comparison of database tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools)
 * [Oracle_to_Postgres_Conversion](https://wiki.postgresql.org/wiki/Oracle_to_Postgres_Conversion)
-* [Ispirer Migration Knowledge Base]](http://wiki.ispirer.com/sqlways)
+* [Ispirer Migration Knowledge Base](http://wiki.ispirer.com/sqlways)
 ### DB Sync
 * [HVR](https://www.hvr-software.com)
 ### ETL
 * [Data Integration (or Kettle)](https://community.hitachivantara.com/docs/DOC-1009855)
+### Data Compare
+* [apgdiff](https://www.apgdiff.com/) - Compares two database dump files and creates output with DDL statements that can be used to update old database schema to new one.
 
 
