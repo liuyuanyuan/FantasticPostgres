@@ -496,3 +496,69 @@ select * from num1;
 -----------------------
 1;12345678;1235;12.35
 -----------------------
+
+                                   
+----oracle binary type data generate----
+create table test_lob(id int, c1 clob, c2 nclob);
+insert into test_lob values(5, 'clob5', 'nclob5');
+
+declare 
+i NUMBER;
+begin
+for i in 6..1000 loop
+ insert into test_lob values(i, 'clob'||i, 'nclob'||i);
+end LOOP;
+END;
+
+select * from  test_lob order by id asc;
+
+-----------------
+create table test_raw(id int, c1 long raw,  c2  raw(1000)); 
+ 
+declare 
+i NUMBER;
+begin
+for i in 6..100 loop
+insert into test_raw values(i, utl_raw.cast_to_raw('long raw'||i),utl_raw.cast_to_raw('raw'||i));
+end LOOP;
+END;
+
+select * from test_raw order by id asc
+    
+-----------------
+create table test_bfile(id int primary key, c BFILE);  
+
+create directory dir as '/tmp'; 
+grant read on directory dir to lyy;
+
+Insert into test_bfile values(1,  bfilename('DIR', '1-1.png')); 
+
+declare 
+i NUMBER;
+begin
+for i in 101..150 loop
+Insert into test_bfile values(i,  bfilename('DIR', '0-1'));
+end LOOP;
+END;
+
+select  * from  test_bfile order by id asc;
+    
+---------------------
+create table test_interval(id number(2),x interval year to month,y interval day to second);
+
+insert into test_interval values (21, interval '21' year, interval '21' day);
+insert into test_interval values (22, interval '22' year, interval '22' day);
+insert into test_interval values (23, interval '23' year, interval '23' day);
+insert into test_interval values (24, interval '24' year, interval '24' day);
+insert into test_interval values (25, interval '25' year, interval '25' day);
+insert into test_interval values (26, interval '26' year, interval '26' day);
+insert into test_interval values (27, interval '27' year, interval '27' day);
+insert into test_interval values (28, interval '28' year, interval '28' day);
+insert into test_interval values (29, interval '29' year, interval '29' day);
+insert into test_interval values (30, interval '30' year, interval '30' day);
+    
+select * from test_interval order by id asc;
+  
+-------------------                                   
+
+                                   
