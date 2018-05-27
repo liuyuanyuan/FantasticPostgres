@@ -18,7 +18,8 @@ pgPpst.setSQLXML(index, xml);
 // ppstmt.setSQLXML(index, rawrs.getSQLXML(index));//this failed cause oracle not support getSQLXML()
 
 
-
+Q2. ORACLE BLOB/RAW/LONG RAW/BFILE - PG bytea/oid
+doc: https://jdbc.postgresql.org/documentation/head/binary-data.html
 
 
 
