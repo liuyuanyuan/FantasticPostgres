@@ -559,6 +559,17 @@ insert into test_interval values (30, interval '30' year, interval '30' day);
     
 select * from test_interval order by id asc;
   
--------------------                                   
+---oracle long 是不推荐的类型，现在推荐使用clob和nclob类型---                                   
+create table test_long(id int, c long);
+insert into test_long values(1, 'long1')
 
+declare 
+i NUMBER;
+begin
+for i in 1..1000 loop
+ insert into test_long values(i, 'long'||i);
+end LOOP;
+END;
+
+select * from test_long order by id asc;
                                    
