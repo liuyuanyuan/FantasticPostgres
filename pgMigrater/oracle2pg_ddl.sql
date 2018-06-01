@@ -74,6 +74,24 @@ Syntax: same to PG.
 
 
 
+--sequence--
+if 
+oracle cache==0 ==> PG start=last_number;
+else
+      select seq.nextval from dual;    ==> PG start = oracle nextval
+      === restore ===
+ 	 alter sequence seq increment by -x;
+ 	 select seq.nextval from dual; 
+ 	 alter sequence seq increment by x;
+      === restore ===
+ 
+test: 
+oracle:
+select seq.nextval from  dual; --currval must in a session that has executed nextval.
+
+PG: 
+select nextval('seq')
+      
 
 
 
