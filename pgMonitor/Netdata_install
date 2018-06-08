@@ -1,10 +1,10 @@
 Netdata 
 Github wiki:  https://github.com/firehol/netdata/wiki/Installation#linux-one-liner
 OS: only Linux
-Source code:
-   c: get OS info
-   python: API
-   web: Web Page to view
+===Source code===
+c: get OS info
+python: chart
+web: Web Page to view
 
 
 ===install steps===
