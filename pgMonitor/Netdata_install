@@ -7,24 +7,143 @@ Source code:
    web: Web Page to view
 
 
+===install steps===
+--------------------------------------------------------------
+step1: update centos7
+yum -y update
+step2:
+ bash <(curl -Ss https://my-netdata.io/kickstart.sh) all
 
-1. Installation
-Linux one liner
-For all Linux systems, you can use this one liner to install the git version of netdata:
-# basic netdata installation
-bash <(curl -Ss https://my-netdata.io/kickstart.sh)
+*[error and resolve]If cannot download and Failed connect to raw.githubusercontent.com:443
+download kickstart.sh
+download install-required-packages.sh
+edit kickstart.sh to change url="file:///root/Desktop/install-required-packages.sh"
+and run again: bash kickstart.sh all
+*[error and resolve] yum install nodejs and no package nodejs available
+wget nodejs 
+unzip
+add nodejs/bin to root's /etc/profile PATH, source /etc/profile
 
-# or
+step3:install pg10 by binary installer
+config pg_hba.conf and change local to trust(if not provid password to netdata).
 
-# install required packages for all netdata plugins
-bash <(curl -Ss https://my-netdata.io/kickstart.sh) all
+step4:config netdata postgresql.conf
+vi /etc/netdata/python.d/postgres.conf  
+socket:  
+    name     : 'local'  
+    user     ：'postgres'  
+    password : 'postgres'  
+    database : 'highgo'  
+  
+tcp: 
+    name     : 'local'  
+    database : 'postgres'  
+    user     : 'postgres'  
+    password : 'postgres'  
+    host     : 'locahost'  
+    port     : 5432  
+  
+tcpipv4:  
+    name     : 'local'  
+    database : 'postgres'  
+    user     : 'postgres'  
+    host     : '127.0.0.1'  
+    port     : 5432  
+  
+tcpipv6:  
+    name     : 'local'  
+    database : 'postgres'  
+    user     : 'postgres'  
+    host     : '::1'  
+    port     : 5432  
 
-========================================================================================
-After Linux one liner basic netdata isntallation, I got some output like:
+step5：
+systemctl enable netdata.service
+systemctl restart netdata.service
+
+step6: browse http://localhost:19999/index
+and then you can see [Postgres local] on the right navigation bar.
+
+http://127.0.0.1:19999/
+You can get the running config file at any time, by accessing http://127.0.0.1:19999/netdata.conf.
+---------------------------------------------------------------
 
 
- --- Installing netdata... --- 
-[/usr/src/netdata.git]# ./netdata-installer.sh -u 
+===Install  details==
+root@localhost Desktop]# bash <(curl -Ss https://my-netdata.io/kickstart.sh) all
+System            : Linux
+Operating System  : GNU/Linux
+Machine           : x86_64
+BASH major version: 4
+ --- Downloading script to detect required packages... --- 
+[/root/Desktop]# /usr/bin/curl https://raw.githubusercontent.com/firehol/netdata-demo-site/master/install-required-packages.sh 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 41916  100 41916    0     0  74976      0 --:--:-- --:--:-- --:--:-- 75118
+ OK   
+
+
+ --- Running downloaded script to detect required packages... --- 
+[/root/Desktop]# /usr/bin/bash /tmp/netdata-kickstart-j85D17 netdata-all 
+Loading /etc/os-release ...
+You should have EPEL enabled to install all the prerequisites.
+Check: http://www.tecmint.com/how-to-enable-epel-repository-for-rhel-centos-6-5/
+
+/etc/os-release information:
+NAME            : CentOS Linux
+VERSION         : 7 (Core)
+ID              : centos
+ID_LIKE         : rhel fedora
+VERSION_ID      : 7
+
+We detected these:
+Distribution    : centos
+Version         : 7
+Codename        : 7 (Core)
+Package Manager : install_yum
+Packages Tree   : centos
+Detection Method: /etc/os-release
+Default Python v: 2 
+
+WARNING
+package autoconf-archive is not available in this system.
+You may try to install without it.
+
+ > Checking if package 'zlib-devel' is installed...
+ > Checking if package 'libuuid-devel' is installed...
+ > Checking if package 'libmnl-devel' is installed...
+ > Checking if package 'nodejs' is installed...
+ > Checking if package 'PyYAML' is installed...
+WARNING
+package python-pymongo is not available in this system.
+You may try to install without it.
+
+ > Checking if package 'MySQL-python' is installed...
+ > Checking if package 'python-psycopg2' is installed...
+
+The following command will be run:
+
+ >> IMPORTANT << 
+    Please make sure your system is up to date
+    by running:   yum update  
+
+yum install nodejs 
+[/usr/src/netdata.git]# /usr/bin/git fetch --all 
+Fetching origin
+ OK   
+
+[/usr/src/netdata.git]# /usr/bin/git reset --hard origin/master 
+HEAD is now at 7da8ccf Merge pull request #3776 from l2isbad/py2_monotonic_time
+ OK   
+
+ --- Re-installing netdata... --- 
+[/usr/src/netdata.git]# ./netdata-updater.sh -f 
+Thu Jun  7 19:09:56 PDT 2018 : INFO:  Running on a terminal - (this script also supports running headless from crontab)
+
+Thu Jun  7 19:09:56 PDT 2018 : INFO:  Updating netdata source from github...
+Already up-to-date.
+
+Thu Jun  7 19:09:59 PDT 2018 : INFO:  Re-installing netdata...
 
   ^
   |.-.   .-.   .-.   .-.   .  netdata                                        
@@ -49,41 +168,62 @@ After Linux one liner basic netdata isntallation, I got some output like:
   This installer allows you to change the installation path.
   Press Control-C and run the same command with --help for help.
 
-Press ENTER to build and install netdata to your system > 
 
+ --- Run autotools to configure the build environment --- 
+[/usr/src/netdata.git]# ./autogen.sh 
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: configure.ac: not using Libtool
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+autoreconf: Leaving directory `.'
+ OK   
 
+[/usr/src/netdata.git]# ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --with-zlib --with-math --with-user=netdata CFLAGS=-O2 
+.
+.
+.
+.
+.
+ --- Restore user edited netdata configuration files --- 
+[/usr/src/netdata.git]# cp -a /etc/netdata/netdata.conf.installer_backup..30032 /etc/netdata/netdata.conf 
+ OK   
 
+[/usr/src/netdata.git]# rm -f /etc/netdata/netdata.conf.installer_backup..30032 
+ OK   
 
--- Restore user edited netdata configuration files --- 
+[/usr/src/netdata.git]# cp -a /etc/netdata/python.d.conf.installer_backup..30032 /etc/netdata/python.d.conf 
+ OK   
+
+[/usr/src/netdata.git]# rm -f /etc/netdata/python.d.conf.installer_backup..30032 
+ OK   
+
+[/usr/src/netdata.git]# cp -a /etc/netdata/health_alarm_notify.conf.installer_backup..30032 /etc/netdata/health_alarm_notify.conf 
+ OK   
+
+[/usr/src/netdata.git]# rm -f /etc/netdata/health_alarm_notify.conf.installer_backup..30032 
+ OK   
+
  --- Fix generated files permissions --- 
 [/usr/src/netdata.git]# find ./system/ -type f -a \! -name \*.in -a \! -name Makefile\* -a \! -name \*.conf -a \! -name \*.service -a \! -name \*.logrotate -exec chmod 755 \{\} \; 
  OK   
 
  --- Add user netdata to required user groups --- 
-Adding netdata user group ...
-[/usr/src/netdata.git]# groupadd -r netdata 
- OK   
-
-Adding netdata user account with home /var/lib/netdata ...
-[/usr/src/netdata.git]# useradd -r -g netdata -c netdata -s /sbin/nologin --no-create-home -d /var/lib/netdata netdata 
- OK   
-
+Group 'netdata' already exists.
+User 'netdata' already exists.
 Group 'docker' does not exist.
 Group 'nginx' does not exist.
 Group 'varnish' does not exist.
 Group 'haproxy' does not exist.
-Adding netdata user to the adm group ...
-[/usr/src/netdata.git]# usermod -a -G adm netdata 
- OK   
-
+User 'netdata' is already in group 'adm'.
 Group 'nsd' does not exist.
 Group 'proxy' does not exist.
 Group 'squid' does not exist.
 Group 'ceph' does not exist.
  --- Install logrotate configuration for netdata --- 
-[/usr/src/netdata.git]# cp system/netdata.logrotate /etc/logrotate.d/netdata 
- OK   
-
 [/usr/src/netdata.git]# chmod 644 /etc/logrotate.d/netdata 
  OK   
 
@@ -184,43 +324,15 @@ Group 'ceph' does not exist.
  OK   
 
  --- Install netdata at system init --- 
-Installing systemd service...
-[/usr/src/netdata.git]# cp system/netdata.service /etc/systemd/system/netdata.service 
- OK   
-
-[/usr/src/netdata.git]# systemctl daemon-reload 
- OK   
-
-[/usr/src/netdata.git]# systemctl enable netdata 
-Created symlink from /etc/systemd/system/multi-user.target.wants/netdata.service to /etc/systemd/system/netdata.service.
- OK   
-
+file '/etc/systemd/system/netdata.service' already exists.
  --- Start netdata --- 
-[/usr/src/netdata.git]# /bin/systemctl stop netdata 
+[/usr/src/netdata.git]# /usr/bin/systemctl stop netdata 
  OK   
 
-[/usr/src/netdata.git]# /bin/systemctl restart netdata 
+[/usr/src/netdata.git]# /usr/bin/systemctl restart netdata 
  OK   
 
 OK. NetData Started!
-
-
--------------------------------------------------------------------------------
-
-Downloading default configuration from netdata...
-[/usr/src/netdata.git]# curl -s -o /etc/netdata/netdata.conf.new http://localhost:19999/netdata.conf 
- OK   
-
-[/usr/src/netdata.git]# mv /etc/netdata/netdata.conf.new /etc/netdata/netdata.conf 
- OK   
-
- OK  New configuration saved for you to edit at /etc/netdata/netdata.conf 
-
-[/usr/src/netdata.git]# chown netdata /etc/netdata/netdata.conf 
- OK   
-
-[/usr/src/netdata.git]# chmod 0664 /etc/netdata/netdata.conf 
- OK   
 
  --- Check KSM (kernel memory deduper) --- 
 
@@ -260,7 +372,10 @@ Update script generated   : ./netdata-updater.sh
 
 netdata-updater.sh can work from cron. It will trigger an email from cron
 only if it fails (it does not print anything when it can update netdata).
- --- Installing netdata-updater at cron --- 
+ --- Refreshing netdata-updater at cron --- 
+[/usr/src/netdata.git]# rm /etc/cron.daily/netdata-updater 
+ OK   
+
 [/usr/src/netdata.git]# ln -s /usr/src/netdata.git/netdata-updater.sh /etc/cron.daily/netdata-updater 
  OK   
 
@@ -276,18 +391,9 @@ only if it fails (it does not print anything when it can update netdata).
 
  OK   
 
+You have new mail in /var/spool/mail/root
 
 
-
-2. Browse and Working with netdata
-You can start netdata by executing it with /usr/sbin/netdata (the installer will also start it).
-
-You can stop netdata by killing it with killall netdata. You can stop and start netdata at any point. Netdata saves on exit its round robbin database to /var/cache/netdata so that it will continue from where it stopped the last time.
-
-Access to the web site, for all graphs, is by default on port 19999, so go to:
-
-http://127.0.0.1:19999/
-You can get the running config file at any time, by accessing http://127.0.0.1:19999/netdata.conf.
 
 
 
