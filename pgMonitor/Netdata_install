@@ -26,6 +26,8 @@ add nodejs/bin to root's /etc/profile PATH, source /etc/profile
 
 step3:install pg10 by binary installer
 config pg_hba.conf and change local to trust(if not provid password to netdata).
+postgres remote access config:
+host  all  all  0.0.0.0/0  md5
 
 step4:config netdata postgresql.conf
 vi /etc/netdata/python.d/postgres.conf  
@@ -33,13 +35,13 @@ socket:
     name     : 'local'  
     user     ：'postgres'  
     password : 'postgres'  
-    database : 'highgo'  
+    database : 'highgo' 
   
 tcp: 
     name     : 'local'  
     database : 'postgres'  
     user     : 'postgres'  
-    password : 'postgres'  
+    password : 'postgres'  # if not provide password then must config postgres trust
     host     : 'locahost'  
     port     : 5432  
   
@@ -61,11 +63,17 @@ step5：
 systemctl enable netdata.service
 systemctl restart netdata.service
 
-step6: browse http://localhost:19999/index
-and then you can see [Postgres local] on the right navigation bar.
+step6: 
+browse: http://localhost:19999/index
+[after config postgres.conf then you can see [Postgres local] on the right navigation bar.]
 
-http://127.0.0.1:19999/
-You can get the running config file at any time, by accessing http://127.0.0.1:19999/netdata.conf.
+You can get the running config file at any time, by accessing:
+http://127.0.0.1:19999/netdata.conf.
+
+remote visit need config firewall:
+centos7 close fire wall:
+systemctl stop firewalld
+systemctl disable firewalld
 ---------------------------------------------------------------
 
 
