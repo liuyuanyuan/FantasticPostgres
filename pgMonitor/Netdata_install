@@ -1,10 +1,29 @@
 Netdata 
 Github wiki:  https://github.com/firehol/netdata/wiki/Installation#linux-one-liner
 OS: only Linux
-===Source code===
-c: get OS info
-python: chart
-web: Web Page to view
+===Source code and Architecture===
+https://my-netdata.io/infographic.html
+1.collect data via plugin
+src(C) use /proc、/sys and other Linux kernal file system to collect data；
+python.d(python) work with bash and conf file to collect data, include collecting postgres data;
+fping.plugin use bash to fping any hosts and get lagency, packet loss and uptime information.
+node.d(nodejs) use to collect data;
+alarm send email or slack  by alarm-notify.sh。
+and so on.
+
+2.internal API to manange data collection
+
+3.metric database：
+缺省是将一小时数据保存在内存中，这种情况下监控的内存和cpu消耗都很低；
+如果想保留几小时的历史数据可以启用KSM，因为netdata的写频率很低，所以KSM能够节省60%以上内存；
+如果想要保留更长时间的历史数据，最好将数据存储到时间序列数据库中， 可以使用graphite, opentsdb, prometheus, influxdb, kairosdb等。
+
+4.use REST Http API to provide json data to front(via Swagger)
+5. hashboard.js
+6. dashboard.css
+7. dashboard.html
+TV Client: tv.html
+
 
 
 ===install steps===
