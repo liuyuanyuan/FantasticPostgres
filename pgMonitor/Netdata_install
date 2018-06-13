@@ -25,6 +25,42 @@ and so on.
 TV Client: tv.html
 
 
+===Front Postgres Metrics===
+Performance metrics for PostgresSQL, the object-relational database (ORDBMS).
+
+==DB(all db, a set of charts per db)
+Current connection to db (postgres_local.postgres_db_stat_connections)
+
+Transaction on db (postgres_local.postgres_db_stat_transactions)
+    Number of rows inserted/updated/deleted.
+    conflicts: number of queries canceled due to conflicts with recovery in this database. (Conflicts occur only on standby servers; see pg_stat_database_conflicts for details.)
+
+Tuples written to dbL postgres(postgres_local.postgres_db_stat_tuple_write)
+
+Tuples returned from db: postgres (postgres_local.postgres_db_stat_tuple_returned)
+    Blocks reads from disk or cache.
+	blks_read: number of disk blocks read in this database.
+	blks_hit: number of times disk blocks were found already in the buffer cache, so that a read was not necessary (this only includes hits in the PostgreSQL buffer cache, not the operating system's file system cache)
+
+Disk blocks reads from db: postgres (postgres_local.postgres_db_stat_blks)
+    Temporary files can be created on disk for sorts, hashes, and temporary query results.
+
+Temp files written to disk: postgres (postgres_local.postgres_db_stat_temp_bytes)
+   files: number of temporary files created by queries. All temporary files are counted, regardless of why the temporary file was created (e.g., sorting or hashing).
+
+Temp files written to disk: postgres (postgres_local.postgres_db_stat_temp_files)
+
+Locks on db: postgres (postgres_local.postgres_locks)
+
+=DB SIZE(all db in one chart)
+=backend processes
+=wal
+=wal writes
+=archive wal
+=checkpointer
+=bgwriter
+=autovacuum
+
 
 ===install steps===
 --------------------------------------------------------------
