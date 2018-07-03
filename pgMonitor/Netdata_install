@@ -11,6 +11,22 @@ node.d(nodejs) use to collect data;
 alarm send email or slack  by alarm-notify.sh。
 and so on.
 
+Hint:
+=plugins.d [bash]=
+type: #!/usr/bin/env bash
+
+Linux下#!/usr/bin/env bash和#!/usr/bin/bash、#!/bin/bash的比较
+#!/usr/bin/env bash #在不同的系统上提供了一些灵活性。
+#!/usr/bin/bash #将对给定的可执行文件系统进行显式控制。
+
+通过/usr/bin/env运行程序，用户不需要去寻找程序在系统中的位置（因为在不同的系统，命令或程序存放的位置可能不同），只要程序在你的$PATH中；
+通过/usr/bin/env运行程序另一个好处是，它会根据你的环境寻找并运行默认的版本，提供灵活性。
+不好的地方是，有可能在一个多用户的系统中，别人在你的$PATH中放置了一个bash，可能出现错误。
+
+大部分情况下，/usr/bin/env 是优先选择的，因为它提供了灵活性，特别是你想在不同的版本下运行这个脚本；
+而指定具体位置的方式#!/usr/bin/bash，在某些情况下更安全，因为它限制了代码注入的可能。
+可能在一些系统上/usr/bin/bash没有，而/bin/bash则一定存在的。所以/bin/bash是显示指定的优先选择。
+
 2.internal API to manange data collection
 
 3.metric database：
@@ -149,8 +165,33 @@ step10: Custom Dashboards
 https://github.com/firehol/netdata/wiki/Custom-Dashboards
 ---------------------------------------------------------------
 
+===API details===
+http://192.168.100.170:19999/api/v1/allmetrics
+http://192.168.100.170:19999/api/v1/data?chart=system.io&format=array&points=300&group=average&gtime=0&options=absolute|jsonwrap|nonzero&after=-300&dimensions=in&_=1528694866751
+{
+   "api": 1,
+   "id": "system.io",
+   "name": "system.io",
+   "view_update_every": 1,
+   "update_every": 1,
+   "first_entry": 1528692202,
+   "last_entry": 1528696198,
+   "before": 1528696198,
+   "after": 1528695899,
+   "dimension_names": ["in"],
+   "dimension_ids": ["in"],
+   "latest_values": [0],
+   "view_latest_values": [0],
+   "dimensions": 1,
+   "points": 300,
+   "format": "array",
+   "result": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+ "min": 0,
+ "max": 0
+}
 
-===Install  details==
+
+===Install  details===
 root@localhost Desktop]# bash <(curl -Ss https://my-netdata.io/kickstart.sh) all
 System            : Linux
 Operating System  : GNU/Linux
