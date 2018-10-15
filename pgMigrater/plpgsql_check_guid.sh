@@ -1,6 +1,6 @@
-====================================================
-I Compiling plpgsql_check extension with PostgreSQL 10
-====================================================
+======================================================
+I Compiling plpgsql_check extension with PostgreSQL10
+======================================================
 ref:
 https://www.raghavt.com/blog/2018/04/10/compiling-plpgsql_check-extension-with-edb-postgres-9.6/
 https://pgxn.org/dist/plpgsql_check/0.9.3/
