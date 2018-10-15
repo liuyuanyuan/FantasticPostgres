@@ -4,42 +4,37 @@
 
 ## Desktop Admin
 * [DataGrid](https://www.jetbrains.com/datagrip/?fromMenu)
- Cross-Platform IDE for multi Databases & SQL 
- By JetBrains
+  [By JetBrains] Cross-Platform IDE for multi Databases & SQL 
+
 
 * [Navicate for PostgreSQL](https://www.navicat.com/en/products/navicat-for-postgresql)
- Cross-Platform IED for multi Databases
- By CyberTech 
+  [By CyberTech] Cross-Platform IED for multi Databases
+
 
 * [DBeaver]()
- Cross-Platform IED for multi databases
- Open source and free
+  [Open source and free] Cross-Platform IED for multi databases
 
 * [pgAdmin3]()
- Cross-Platform IED for PG
- Open source and free
+  [Open source and free] Cross-Platform IED for PG
 
 * [pgAdmin4 based on pgAdmin3]()
- Cross-Platform IED for PG 
- for both desktop and web GUI.
- Open source and free
+ [Open source and free] Cross-Platform IED for PG for both desktop and web GUI.
+ 
 
 * [DBForge Studio for PG](https://www.devart.com/dbforge/postgresql/studio/)
 * [DBForge Data Compara](https://www.devart.com/dbforge/postgresql/datacompare/)
 
 
 ## Web Admin
-* [pgAdmin4 based on pgAdmin3]()
-python web GUI.
-[Open source and free](https://github.com/postgres/pgadmin4)
- 
-* [phpPgAdmin]()
-php web IDE 
-[Open source and free](https://github.com/xzilla/phppgadmin)
+* [pgAdmin4 based on pgAdmin3](https://github.com/postgres/pgadmin4)
+  [Open source and free] python web GUI.
 
-* [Adminer]()
-php web IDE
-[Open source and free](https://github.com/vrana/adminer)
+* [phpPgAdmin](https://github.com/xzilla/phppgadmin)
+  [Open source and free] php web IDE 
+
+* [Adminer](https://github.com/vrana/adminer)
+  [Open source and free] php web IDE
+
 
 
  
