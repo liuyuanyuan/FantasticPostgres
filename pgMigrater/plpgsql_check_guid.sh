@@ -103,7 +103,6 @@ postgres=# \sf+ f1
 postgres=# 
 
 
-
 =========================================
 II Get all function define of PostgreSQL 
 =========================================
@@ -113,9 +112,23 @@ LEFT OUTER JOIN pg_namespace n ON p.pronamespace = n.oid
 WHERE n.nspname NOT IN('information_schema', 'pg_catalog')
 AND p.proname NOT IN('__plpgsql_check_function', '__plpgsql_check_function_tb','plpgsql_check_function', 'plpgsql_check_function_tb')
 
+
 ============================================
 III Get check return contents for functions
 ============================================
+ 
+    SELECT plpgsql_check_function_tb(p.oid, COALESCE(pg_trigger.tgrelid, 0),fatal_errors := false) funccheck
+       , p.oid as funcoid ,nsp.nspname funcschema , p.proname as funcname, typ.typname
+    FROM pg_proc p        
+    JOIN pg_namespace nsp ON(nsp.oid = P.pronamespace )
+    JOIN pg_language lang ON(lang.oid = p.prolang )
+    JOIN pg_type typ ON(typ.oid = p.prorettype)
+    LEFT JOIN pg_trigger ON (pg_trigger.tgfoid = p.oid) 
+    WHERE lang.lanname IN('plpgsql')
+    AND nsp.nspname NOT IN('pg_catalog')
+    AND (typ.typname NOT IN('trigger') OR pg_trigger.tgfoid IS NOT NULL) 
+    OFFSET 0;
+
 
 
 
