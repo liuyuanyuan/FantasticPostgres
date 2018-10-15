@@ -106,7 +106,7 @@ postgres=#
 
 
 =========================================
-II Get all function define of PostgreSQL 
+II Get all function defination of PostgreSQL 
 =========================================
 SELECT p.oid funcoid, n.nspname funcschema, p.proname funcname, pg_get_functiondef(p.oid) funcdefine
 FROM pg_proc p
@@ -116,7 +116,7 @@ AND p.proname NOT IN('__plpgsql_check_function', '__plpgsql_check_function_tb','
 
 
 ============================================
-III Get check return contents for functions
+III Get check result for all functions
 ============================================
 You can use the plpgsql_check_function for mass check functions and mass check triggers. Please, test following queries:
 
