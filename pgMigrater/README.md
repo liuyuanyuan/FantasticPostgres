@@ -1,5 +1,5 @@
 ## Migration
-* [SQLine Oracle to PostgreSQL Migration](http://www.sqlines.com/oracle-to-postgresql) - C++， Include migrator and PLSQL Converter
+* [SQLine - Oracle to PostgreSQL Migration](http://www.sqlines.com/oracle-to-postgresql) - C++， Include migrator and PLSQL Converter
 * [mysql-postgresql-converter](https://github.com/lanyrd/mysql-postgresql-converter) - Lanyrd's MySQL to PostgreSQL conversion script.
 * [ora2pg](http://ora2pg.darold.net) - [Open source and free] Perl module to export an Oracle database schema to a PostgreSQL compatible schema.
 * [pgloader](https://github.com/liuyuanyuan/fantastic-postgres/blob/master/pgMigrater/pgloader/pgloader_intro.md)
