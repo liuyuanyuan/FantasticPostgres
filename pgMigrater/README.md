@@ -21,7 +21,7 @@
 
 
 ## Migration Knowledge Base
-* [Tangcheng oracle2pg Migrate Blog](http://osdbablog.sinaapp.com/528.html)
+* [TangCheng oracle2pg Migrate Blog](http://osdbablog.sinaapp.com/528.html)
 * [Oracle vs PG Diff](https://my.oschina.net/liyuj/blog/539303)
 * [Oracle vs PG System Function Diff](https://yq.aliyun.com/users/1994466589078092?spm=a2c4e.11153940.blogcont59422.2.2130505bZglu5d)
 
