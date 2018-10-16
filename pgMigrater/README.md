@@ -8,7 +8,7 @@
 * [PG WIKI - Oracle_to_Postgres_Conversion](https://wiki.postgresql.org/wiki/Oracle_to_Postgres_Conversion)
 
 
-## Compatible Function
+## Oracle Compatible
 * [Orafce](https://github.com/orafce/orafce) Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS.
 
 
