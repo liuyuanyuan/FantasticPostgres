@@ -167,15 +167,16 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [PostgreSQL Document Chinese Translation](https://github.com/postgres-cn)
 
 ### Conferences
-* [2011 PostgreSQL China Con（Guangzhou）](https://wiki.postgresql.org/wiki/Pgconchina2011)
-* [2012 PostgreSQL China Con（Beijing）](http://topic.it168.com/factory/PostgreSQL/)
-* [2013 PostgreSQL China Con（Hangzhou）](http://wenku.it168.com/huiyi/721)
-* [2014 PostgreSQL China Con（Shenzhen）](http://www.eventdove.com/event/7058)
-* [2015 PostgreSQL China Con（Beijing）](http://www.huodongxing.com/event/reg_submit?id=9305629513300)
-* [2016 PostgreSQL China Con（Shanghai）](http://pgconfcn2016.eventdove.com/)
-* [2017 PostgreSQL China Association Con（Beijing）](http://postgresql621-tcwechatshare.eventdove.com/)
+* [2011 PostgreSQL China Con(Guangzhou)](https://wiki.postgresql.org/wiki/Pgconchina2011)
+* [2012 PostgreSQL China Con(Beijing)](http://topic.it168.com/factory/PostgreSQL/)
+* [2013 PostgreSQL China Con(Hangzhou)](http://wenku.it168.com/huiyi/721)
+* [2014 PostgreSQL China Con(Shenzhen)](http://www.eventdove.com/event/7058)
+* [2015 PostgreSQL China Con(Beijing)](http://www.huodongxing.com/event/reg_submit?id=9305629513300)
+* [2016 PostgreSQL China Con(Shanghai)](http://pgconfcn2016.eventdove.com/)
+* [2017 PostgreSQL China Association Con(Beijing)](http://postgresql621-tcwechatshare.eventdove.com/)
 * [2017 PostgreSQL China Con(Shenzhen](http://postgresconf2017.eventdove.com/)
-* [2018 PostgreSQL China Con(hangzhou)]
+* [2018 PostgreSQL China Con(hangzhou)]()
+
    [15日主会场：9:00-5:40](https://yq.aliyun.com/live/660)
    [15日分会场1：1:30-5:20](https://yq.aliyun.com/live/661)
    [15日分会场2：1:30-5:20](https://yq.aliyun.com/live/662)
