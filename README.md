@@ -29,11 +29,12 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 - [Videos](#videos)
 - [Conferences](#conferences)
 
+- [Utilities](#utilities)
 - [GUI](#gui)
 - [GUI Wiki](https://wiki.postgresql.org/wiki/Community_Guide_to_PostgreSQL_GUI_Tools#phpPgAdmin)
 - [Monitoring](#monitoring)
 - [Monitoring Wiki](https://wiki.postgresql.org/wiki/Monitoring)
-- [Utilities](#utilities)
+
 
 - [Migration](#migration)
 
@@ -176,6 +177,34 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [2017 PostgreSQL China Con（Shenzhen）](http://postgresconf2017.eventdove.com/)
 
 
+### Utilities
+* [ERAlchemy](https://github.com/Alexis-benoist/eralchemy) - ERAlchemy generates Entity Relation (ER) diagram from databases.
+* [pg\_activity](https://github.com/julmon/pg_activity) - top like application for PostgreSQL server activity monitoring.
+* [pg-formatter](https://github.com/gajus/pg-formatter) - A PostgreSQL SQL syntax beautifier (Node.js).
+* [pganalyze](https://pganalyze.com) - PostgreSQL Performance Monitoring (Commercial Software).
+* [pgbadger](https://github.com/dalibo/pgbadger) - Fast PostgreSQL Log Analyzer.
+* [PgBouncer](http://pgbouncer.github.io) - Lightweight connection pooler for PostgreSQL.
+* [pgCenter](https://github.com/lesovsky/pgcenter) - Provides convenient interface to various statistics, management task, reloading services, viewing log files and canceling or terminating database backends.
+* [pgclimb](https://github.com/lukasmartinelli/pgclimb) - Export data from PostgreSQL into different data formats.
+* [pgfutter](https://github.com/lukasmartinelli/pgfutter) - Import CSV and JSON into PostgreSQL the easy way.
+* [PGInsight](http://pginsight.io/) - CLI tool to easily dig deep inside your PostgreSQL database.
+* [pgloader](https://github.com/dimitri/pgloader) - Loads data into PostgreSQL using the COPY streaming protocol, and does so with separate threads for reading and writing data.
+* [pgpool-II](http://www.pgpool.net/mediawiki/index.php/Main_Page) - Middleware that provides connection pooling, replication, load balancing and limiting exceeding connections.
+* [pgsync](https://github.com/ankane/pgsync) - Tool to sync PostgreSQL data to your local machine.
+* [PGXN client](https://github.com/dvarrazzo/pgxnclient) - Command line tool to interact with the PostgreSQL Extension Network
+* [postgresql-metrics](https://github.com/spotify/postgresql-metrics) - Tool that extracts and provides metrics for your PostgreSQL database.
+* [PostgREST](https://github.com/begriffs/postgrest) - Serves a fully RESTful API from any existing PostgreSQL database.
+* [pREST](https://github.com/prest/prest) - Serve a RESTful API from any PostgreSQL database (Golang)
+* [PostGraphQL](https://github.com/postgraphql/postgraphql) - A GraphQL schema created by reflection over a PostgreSQL schema.
+* [yoke](https://github.com/nanopack/yoke) - PostgreSQL high-availability cluster with auto-failover and automated cluster recovery.
+* [pglistend](https://github.com/kabirbaidhya/pglistend) - A lightweight PostgresSQL `LISTEN`/`NOTIFY` daemon built on top of `node-postgres`.
+* [ZSON](https://github.com/postgrespro/zson) - PostgreSQL extension for transparent JSONB compression
+* [pg_bulkload](http://ossc-db.github.io/pg_bulkload/index.html) - It's a high speed data loading utility for PostgreSQL. 
+* [pg_migrate](https://github.com/jwdeitch/pg_migrate) - Manage PostgreSQL codebases and make VCS simple.
+* [sqitch](https://github.com/theory/sqitch) - Tool for managing versioned schema deployment
+* [pgmigrate](https://github.com/yandex/pgmigrate) - CLI tool to evolve schema migrations, developed by Yandex.
+* [pgcmp](https://github.com/cbbrowne/pgcmp) - Tool to compare database schemas, with capability to accept some persistent differences
+
 
 ### GUI
 * [Adminer](https://www.adminer.org/) - Full-featured database management tool written in PHP.
@@ -211,34 +240,9 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [pgbench](https://www.postgresql.org/docs/devel/static/pgbench.html) - Run a benchmark test on PostgreSQL.
 * [opm.io](http://opm.io) -  Open PostgreSQL Monitoring is a free software suite designed to help you manage your PostgreSQL servers. It can gather stats, display dashboards and send warnings when something goes wrong.
 
-### Utilities
-* [ERAlchemy](https://github.com/Alexis-benoist/eralchemy) - ERAlchemy generates Entity Relation (ER) diagram from databases.
-* [pg\_activity](https://github.com/julmon/pg_activity) - top like application for PostgreSQL server activity monitoring.
-* [pg-formatter](https://github.com/gajus/pg-formatter) - A PostgreSQL SQL syntax beautifier (Node.js).
-* [pganalyze](https://pganalyze.com) - PostgreSQL Performance Monitoring (Commercial Software).
-* [pgbadger](https://github.com/dalibo/pgbadger) - Fast PostgreSQL Log Analyzer.
-* [PgBouncer](http://pgbouncer.github.io) - Lightweight connection pooler for PostgreSQL.
-* [pgCenter](https://github.com/lesovsky/pgcenter) - Provides convenient interface to various statistics, management task, reloading services, viewing log files and canceling or terminating database backends.
-* [pgclimb](https://github.com/lukasmartinelli/pgclimb) - Export data from PostgreSQL into different data formats.
-* [pgfutter](https://github.com/lukasmartinelli/pgfutter) - Import CSV and JSON into PostgreSQL the easy way.
-* [PGInsight](http://pginsight.io/) - CLI tool to easily dig deep inside your PostgreSQL database.
-* [pgloader](https://github.com/dimitri/pgloader) - Loads data into PostgreSQL using the COPY streaming protocol, and does so with separate threads for reading and writing data.
-* [pgpool-II](http://www.pgpool.net/mediawiki/index.php/Main_Page) - Middleware that provides connection pooling, replication, load balancing and limiting exceeding connections.
-* [pgsync](https://github.com/ankane/pgsync) - Tool to sync PostgreSQL data to your local machine.
-* [PGXN client](https://github.com/dvarrazzo/pgxnclient) - Command line tool to interact with the PostgreSQL Extension Network
-* [postgresql-metrics](https://github.com/spotify/postgresql-metrics) - Tool that extracts and provides metrics for your PostgreSQL database.
-* [PostgREST](https://github.com/begriffs/postgrest) - Serves a fully RESTful API from any existing PostgreSQL database.
-* [pREST](https://github.com/prest/prest) - Serve a RESTful API from any PostgreSQL database (Golang)
-* [PostGraphQL](https://github.com/postgraphql/postgraphql) - A GraphQL schema created by reflection over a PostgreSQL schema.
-* [yoke](https://github.com/nanopack/yoke) - PostgreSQL high-availability cluster with auto-failover and automated cluster recovery.
-* [pglistend](https://github.com/kabirbaidhya/pglistend) - A lightweight PostgresSQL `LISTEN`/`NOTIFY` daemon built on top of `node-postgres`.
-* [ZSON](https://github.com/postgrespro/zson) - PostgreSQL extension for transparent JSONB compression
-* [pg_bulkload](http://ossc-db.github.io/pg_bulkload/index.html) - It's a high speed data loading utility for PostgreSQL. 
-* [pg_migrate](https://github.com/jwdeitch/pg_migrate) - Manage PostgreSQL codebases and make VCS simple.
-* [sqitch](https://github.com/theory/sqitch) - Tool for managing versioned schema deployment
-* [pgmigrate](https://github.com/yandex/pgmigrate) - CLI tool to evolve schema migrations, developed by Yandex.
-* [pgcmp](https://github.com/cbbrowne/pgcmp) - Tool to compare database schemas, with capability to accept some persistent differences
-
+* [pg_awr](https://github.com/digoal/blog/blob/master/201611/20161123_01.md) - PG data statistic and analysis. 
+* [pgwatch2](https://github.com/cybertec-postgresql/pgwatch2) - PG monitor web GUI.
+* [grafana](https://github.com/grafana/grafana) - DB monitor web GUI and API.
 
 
 ### Migration
