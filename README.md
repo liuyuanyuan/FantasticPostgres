@@ -174,7 +174,14 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [2015 PostgreSQL China Con（Beijing）](http://www.huodongxing.com/event/reg_submit?id=9305629513300)
 * [2016 PostgreSQL China Con（Shanghai）](http://pgconfcn2016.eventdove.com/)
 * [2017 PostgreSQL China Association Con（Beijing）](http://postgresql621-tcwechatshare.eventdove.com/)
-* [2017 PostgreSQL China Con（Shenzhen）](http://postgresconf2017.eventdove.com/)
+* [2017 PostgreSQL China Con(Shenzhen](http://postgresconf2017.eventdove.com/)
+* [2018 PostgreSQL China Con(hangzhou)]
+   [15日主会场：9:00-5:40](https://yq.aliyun.com/live/660)
+   [15日分会场1：1:30-5:20](https://yq.aliyun.com/live/661)
+   [15日分会场2：1:30-5:20](https://yq.aliyun.com/live/662)
+   [16日主会场：9:00-5:40](https://yq.aliyun.com/live/708)
+   [16日分会场1：9:00-5:20](https://yq.aliyun.com/live/663)
+   [16日分会场2：9:00-5:20](https://yq.aliyun.com/live/664)
 
 
 ### Utilities
