@@ -211,6 +211,7 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 * [sqitch](https://github.com/theory/sqitch) - Tool for managing versioned schema deployment
 * [pgmigrate](https://github.com/yandex/pgmigrate) - CLI tool to evolve schema migrations, developed by Yandex.
 * [pgcmp](https://github.com/cbbrowne/pgcmp) - Tool to compare database schemas, with capability to accept some persistent differences
+* [pgbench](https://www.postgresql.org/docs/devel/static/pgbench.html) - Run a benchmark test on PostgreSQL.
 
 
 ### GUI
@@ -240,16 +241,18 @@ A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource an
 ### Monitoring
 * [check\_pgactivity](https://github.com/OPMDG/check_pgactivity) - check\_pgactivity is designed to monitor PostgreSQL clusters from Nagios. It offers many options to measure and monitor useful performance metrics.
 * [Check\_postgres](https://github.com/bucardo/check_postgres) - Nagios check\_postgres plugin for checking status of PostgreSQL databases.
+* [pg_activity]{https://github.com/julmon/pg_activity} - a top like application for PostgreSQL server activity monitoring.
+* [pg\_view](https://github.com/zalando/pg_view) - Open-source command-line tool that shows global system stats, per-partition information, memory stats and other information.
+
 * [Instrumental](https://github.com/Instrumental/instrumentald) - Real-time performance monitoring, including [pre-made graphs](https://instrumentalapp.com/docs/instrumentald/postgresql#suggested-graphs) for ease of setup (Commercial Software)
 * [libzbxpgsql](https://github.com/cavaliercoder/libzbxpgsql) - Comprehensive PostgreSQL monitoring module for Zabbix.
 * [Pome](https://github.com/rach/pome) - Pome stands for PostgreSQL Metrics. Pome is a PostgreSQL Metrics Dashboard to keep track of the health of your database.
-* [pg\_view](https://github.com/zalando/pg_view) - Open-source command-line tool that shows global system stats, per-partition information, memory stats and other information.
-* [pgbench](https://www.postgresql.org/docs/devel/static/pgbench.html) - Run a benchmark test on PostgreSQL.
 * [opm.io](http://opm.io) -  Open PostgreSQL Monitoring is a free software suite designed to help you manage your PostgreSQL servers. It can gather stats, display dashboards and send warnings when something goes wrong.
 
 * [pg_awr](https://github.com/digoal/blog/blob/master/201611/20161123_01.md) - PG data statistic and analysis. 
 * [pgwatch2](https://github.com/cybertec-postgresql/pgwatch2) - PG monitor web GUI.
 * [grafana](https://github.com/grafana/grafana) - DB monitor web GUI and API.
+* [PGObserver](https://github.com/zalando/PGObserver) - Python PG GUI Monitor.
 
 
 ### Migration
