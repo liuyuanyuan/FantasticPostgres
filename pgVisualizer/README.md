@@ -20,7 +20,7 @@ Zabbix
 
 #### DB图形管理特性图谱
 
-![](/Users/liuyuanyuan/github/FantasticPostgres/pgVisualizer/images/dbadmin-features.png)
+![](images/dbadmin-features.png)
 
 
 
