@@ -1,23 +1,5 @@
 # PostgreSQL数据库可视化
 
-## PostgreSQL监控平台
-
-#### PG监控平台TOP
-
-Grafana 
-
-Netdata 
-
-Zabbix 
-
-（待续）
-
-
-
-
-
-## PostgreSQL管理平台
-
 #### DB图形管理特性图谱
 
 ![](images/dbadmin-features.png)
@@ -63,6 +45,7 @@ Zabbix
 支持多种数据库，功能丰富，GUI设计直观、易用、完善（网传c/c++编写）。
 
 商业闭源。（其公司成立于1999年）
+
 ![navicat-main](images/navicat-main.png)
 
 
