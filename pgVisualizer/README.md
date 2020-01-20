@@ -34,9 +34,9 @@ Zabbix
 
 教程 
 
-- [pgAdmin4 搞定安装部署](pgVisualizer/pgadmin4_install.md)
-- [pgAdmin4 搞定开发环境](pgVisualizer/pgadmin4_dev.md)
-- [pgAdmin4 搞定源码架构](pgVisualizer/pgadmin4_source.md)
+- [pgAdmin4 搞定安装部署](pgadmin4_install.md)
+- [pgAdmin4 搞定开发环境](pgadmin4_dev.md)
+- [pgAdmin4 搞定源码架构](pgadmin4_source.md)
 
 ![](images/pgadmin4_welcome.png)
 
@@ -52,7 +52,7 @@ Zabbix
 
 教程 
 
-- [DBeaver 开源数据库桌面管理之王](pgVisualizer/dbeaver_source.md)
+- [DBeaver 开源数据库桌面管理之王](dbeaver_source.md)
 
 ![img](images/dbeaver-ss-erd.png)
 
