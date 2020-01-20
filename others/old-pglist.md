@@ -1,13 +1,14 @@
-# 大美 PostgreSQL
-
-[<img src="https://wiki.postgresql.org/images/a/a4/PostgreSQL_logo.3colors.svg" align="right"  width="150">](https://www.postgresql.org/)
-
-这里是开源关系型数据库 [PostgreSQL](https://www.postgresql.org/) 的生态列表，包括各种开源和商业的服务、工具、文档等资源。部分参考自[awesome-postgres](https://github.com/dhamaniasad/awesome-postgres)等开源资源，仍在努力更新中...💪
-
-> :elephant: 欢迎你为此项目添砖加瓦，你可以通过 [pull requests](https://github.com/liuyuanyuan/FantasticPostgres/pulls) 来贡献资源或者创建 [issue](https://github.com/liuyuanyuan/FantasticPostgres/issues)来开启讨论。谢谢 :)
+# Fantastic PostgreSQL
 
 
-## 内容
+[<img src="https://wiki.postgresql.org/images/a/a4/PostgreSQL_logo.3colors.svg" align="right"  width="100">](https://www.postgresql.org/)
+
+A list of fantastic [PostgreSQL](https://www.postgresql.org/) tools, resource and so on, based on [awesome-postgres](https://github.com/dhamaniasad/awesome-postgres).
+
+> :elephant: Contributions are welcome. Add links through [pull requests](https://github.com/liuyuanyuan/fantastic-postgres/pulls) or create an [issue](https://github.com/liuyuanyuan/fantastic-postgres/issues) to start a discussion. Thanks :)
+
+
+## Contents
 
 - [Server](#server)
 - [High-Availability](#high-availability)
@@ -35,13 +36,11 @@
 - [Monitoring Wiki](https://wiki.postgresql.org/wiki/Monitoring)
 
 
-- [DB Migration](#db migration)
+- [Migration](#migration)
 
 
 ### Server
 * [Postgres-XL](https://www.postgres-xl.org/) - Scalable Open Source PostgreSQL-based Database Cluster.
-* [Postgres-XC]() - 
-* [Greenplum]() - 
 * [Citus](https://github.com/citusdata/citus) - Scalable PostgreSQL cluster for real-time workloads.
 * [PipelineDB](https://www.pipelinedb.com/) - Open source streaming SQL database, fork of postgres
 
@@ -245,25 +244,19 @@
 * [Check\_postgres](https://github.com/bucardo/check_postgres) - Nagios check\_postgres plugin for checking status of PostgreSQL databases.
 * [pg_activity]{https://github.com/julmon/pg_activity} - a top like application for PostgreSQL server activity monitoring.
 * [pg\_view](https://github.com/zalando/pg_view) - Open-source command-line tool that shows global system stats, per-partition information, memory stats and other information.
+
 * [Instrumental](https://github.com/Instrumental/instrumentald) - Real-time performance monitoring, including [pre-made graphs](https://instrumentalapp.com/docs/instrumentald/postgresql#suggested-graphs) for ease of setup (Commercial Software)
 * [libzbxpgsql](https://github.com/cavaliercoder/libzbxpgsql) - Comprehensive PostgreSQL monitoring module for Zabbix.
 * [Pome](https://github.com/rach/pome) - Pome stands for PostgreSQL Metrics. Pome is a PostgreSQL Metrics Dashboard to keep track of the health of your database.
 * [opm.io](http://opm.io) -  Open PostgreSQL Monitoring is a free software suite designed to help you manage your PostgreSQL servers. It can gather stats, display dashboards and send warnings when something goes wrong.
+
 * [pg_awr](https://github.com/digoal/blog/blob/master/201611/20161123_01.md) - PG data statistic and analysis. 
 * [pgwatch2](https://github.com/cybertec-postgresql/pgwatch2) - PG monitor web GUI.
 * [grafana](https://github.com/grafana/grafana) - DB monitor web GUI and API.
 * [PGObserver](https://github.com/zalando/PGObserver) - Python PG GUI Monitor.
 
-### ETL
 
-* [Data Integration (or Kettle)](https://community.hitachivantara.com/docs/DOC-1009855)
-
-### DB Sync
-
-* [HVR](https://www.hvr-software.com)
-
-### DB Migration
-
+### Migration
 * [SQLine Oracle to PostgreSQL Migration](http://www.sqlines.com/oracle-to-postgresql)
 * [mysql-postgresql-converter](https://github.com/lanyrd/mysql-postgresql-converter) - Lanyrd's MySQL to PostgreSQL conversion script.
 * [ora2pg](http://ora2pg.darold.net) - Perl module to export an Oracle database schema to a PostgreSQL compatible schema.
@@ -271,8 +264,10 @@
 * [Comparison of database tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools)
 * [Oracle_to_Postgres_Conversion](https://wiki.postgresql.org/wiki/Oracle_to_Postgres_Conversion)
 * [Ispirer Migration Knowledge Base](http://wiki.ispirer.com/sqlways)
-* https://community.hitachivantara.com/docs/DOC-1009855)
-* https://www.hvr-software.com)
+### ETL
+* [Data Integration (or Kettle)](https://community.hitachivantara.com/docs/DOC-1009855)
+### Sync
+* [HVR](https://www.hvr-software.com)
 
 ### Data Compare
 * [apgdiff](https://www.apgdiff.com/) - Compares two database dump files and creates output with DDL statements that can be used to update old database schema to new one.
