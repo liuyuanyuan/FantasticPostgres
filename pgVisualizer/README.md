@@ -14,15 +14,17 @@ Zabbix
 
 
 
+
+
 ## PostgreSQL管理平台
 
-#### PG管理平台特性图谱
+#### DB图形管理特性图谱
 
-（待续）
+![](/Users/liuyuanyuan/github/FantasticPostgres/pgVisualizer/images/dbadmin-features.png)
 
 
 
-#### PG管理平台TOP4
+#### PG图形管理平台TOP4
 
 ##### pgAdmin4 - PostgreSQL社区标配管理工具
 
