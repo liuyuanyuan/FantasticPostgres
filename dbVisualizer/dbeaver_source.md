@@ -6,7 +6,7 @@
 
 [DBeaver](https://link.zhihu.com/?target=https%3A//dbeaver.com/)有[开源免费的社区版本](https://link.zhihu.com/?target=https%3A//github.com/dbeaver/dbeaver)，也有收费的商业版本，以下内容均基于社区版本。目前社区版本更新非常活跃，基本每两周会有一次小版本更新。
 
-![dbeaver-ss-erd](/Users/liuyuanyuan/github/FantasticPostgres/pgVisualizer/images/dbeaver-ss-erd.png)
+![dbeaver-ss-erd](images/dbeaver-ss-erd.png)
 
 ### 特性图谱：
 
@@ -16,7 +16,7 @@
 
 ### DBeaver v4.2.5 源码结构图
 
-![](/Users/liuyuanyuan/github/FantasticPostgres/pgVisualizer/images/dbeaver-framework.png)
+![](images/dbeaver-framework.png)
 
 
 

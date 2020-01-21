@@ -2,7 +2,7 @@
 
 **简介**
 
-PostgreSQL从v9.4开始添加了file_fdw模块，用以支持外部数据包装器**[file_fdw](https://link.zhihu.com/?target=http%3A//www.postgresql.org/docs/9.4/static/file-fdw.html)**，可用于访问服务器文件系统中的数据文件。数据文件必须采用可由COPY FROM读取的格式（text,csv(以逗号分隔值), binary）；有关详细信息，请参见[COPY](https://link.zhihu.com/?target=https%3A//www.postgresql.org/docs/current/sql-copy.html)。当前对此类数据文件的访问是只读的。
+PostgreSQL从v9.4开始添加了file_fdw模块，用以支持外部数据包装器**[file_fdw](https://www.postgresql.org/docs/12/file-fdw.html)**，可用于访问服务器文件系统中的数据文件。数据文件必须采用可由COPY FROM读取的格式（text,csv(以逗号分隔值), binary）；有关详细信息，请参见[COPY](https://link.zhihu.com/?target=https%3A//www.postgresql.org/docs/current/sql-copy.html)。当前对此类数据文件的访问是只读的。
 
 file_fdw显著用途之一是通过PG数据库表读取PostgreSQL日志信息。
 

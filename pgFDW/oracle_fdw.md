@@ -2,7 +2,7 @@
 
 ## 简介
 
-[oracle_fdw](https://link.zhihu.com/?target=http%3A//pgxn.org/dist/oracle_fdw/)是PostgreSQL的一个外部数据接口，可以使PostgreSQL轻松跨库操作Oracle。
+[oracle_fdw](https://pgxn.org/dist/oracle_fdw/)是PostgreSQL的一个外部数据接口，可以使PostgreSQL轻松跨库操作Oracle。
 
 要求PostgreSQL是 9.1 及更高版本。从 9.2开始支持ANALYZE；从9.3开始支持INSERT、UODATE 和 DELETE。
 

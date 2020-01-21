@@ -1,6 +1,14 @@
-Zabbix Architecture
+# Zabbix
 
-ref: https://www.cnblogs.com/mysql-dba/p/5010902.html
+##### reference
+
+
+
+https://www.cnblogs.com/mysql-dba/p/5010902.html
+
+
+
+##### Deployment
 
 DB Server: agent(db, os, device,application)
 Proxy(optional): help to gather data 

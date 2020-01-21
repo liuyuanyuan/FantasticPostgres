@@ -8,7 +8,11 @@
 
 ## 功能图谱
 
-![](/Users/liuyuanyuan/github/PostgresAdmin/images/pgadmin4.15-features.png)
+![](images/pgadmin4.15-features.png)
+
+## 程序快照
+
+![](images/pgadmin4_dashboard.png)
 
 ## 系统架构
 

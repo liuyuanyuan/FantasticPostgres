@@ -2,12 +2,21 @@
 
 [<img src="https://wiki.postgresql.org/images/a/a4/PostgreSQL_logo.3colors.svg" align="right"  width="150">](https://www.postgresql.org/)
 
-这里是开源关系型数据库 [PostgreSQL](https://www.postgresql.org/) 的生态列表，包括各种开源和商业的服务、工具、文档等资源。部分参考自[awesome-postgres](https://github.com/dhamaniasad/awesome-postgres)等开源资源，仍在努力更新中...💪
+这里是开源关系型数据库 [PostgreSQL](https://www.postgresql.org/) 的生态列表，包括各种开源和商业的服务、工具、文档等资源。部分参考自[awesome-postgres](https://github.com/dhamaniasad/awesome-postgres)等开源资源，仍在努力更新中...
 
 > :elephant: 欢迎你为此项目添砖加瓦，你可以通过 [pull requests](https://github.com/liuyuanyuan/FantasticPostgres/pulls) 来贡献资源或者创建 [issue](https://github.com/liuyuanyuan/FantasticPostgres/issues)来开启讨论。谢谢 :)
 
+## 精华
 
-## 内容
+- [PostgreSQL 内部机制剖析](https://github.com/liuyuanyuan/PostgresInternals)
+
+- [PostgreSQL 外部数据封装器](pgFDW/README.md)
+- [PostgreSQL 数据库可视化](pgVisualizer/README.md)
+- [Oracle2PG 数据库迁移篇](dbMigrator/README.md)
+
+
+
+## 清单
 
 - [Server](#server)
 - [High-Availability](#high-availability)
@@ -94,12 +103,10 @@
 * [Postgres.app](http://postgresapp.com/) - The Easiest Way to Get Started with PostgreSQL on macOS.
 * [PostgreSql.Binaries.Lite](https://github.com/mihasic/PostgreSql.Binaries.Lite) - Minimum set of Windows binaries of the PostgreSQL database. Also made available through NuGet.
 
-### CLI
+### CLI(Command Line Interface)
 * [pgcli](https://github.com/dbcli/pgcli) - Postgres CLI with autocompletion and syntax highlighting
 * [psql](https://www.postgresql.org/docs/current/static/app-psql.html) - The built-in PostgreSQL CLI client
 * [psql2csv](https://github.com/fphilipe/psql2csv) - Run a query in psql and output the result as CSV
-
-
 
 ### PaaS *(PostgreSQL as a Service)*
 * [Aiven PostgreSQL](https://aiven.io/postgresql) - PostgreSQL as a service in AWS, Azure, DigitalOcean, Google Cloud and UpCloud; plans range from $19/month single node instances to large highly-available setups, free trial for two weeks.
@@ -114,8 +121,6 @@
 * [citusdata/citus](https://hub.docker.com/r/citusdata/citus/) - Citus official images with citus extensions. Based on the official Postgres container.
 * [mdillon/postgis](https://hub.docker.com/r/mdillon/postgis/) - PostGIS 2.3 on Postgres 9. Based on the official Postgres container.
 * [postgres](https://hub.docker.com/_/postgres/) -  Official postgres container (from Docker)
-
-
 
 ### Language bindings
 * Common Lisp: [Postmodern](https://github.com/marijnh/Postmodern)
@@ -163,7 +168,7 @@
 * [EnterpriseDB Youtube chanel](https://www.youtube.com/channel/UCkIPoYyNr1OHgTo0KwE9HJw) -  EnterpriseDB related videos
 * [PGConf US Youtube chanel](https://www.youtube.com/pgconfus/) - Conference videos
 
-### Documents
+### Official Documents
 * [PostgreSQL Document](https://www.postgresql.org/docs/10/static/index.html)
 * [PostgreSQL Document Chinese Translation](https://github.com/postgres-cn)
 
@@ -274,7 +279,10 @@
 * https://community.hitachivantara.com/docs/DOC-1009855)
 * https://www.hvr-software.com)
 
-### Data Compare
+### DB Compare
 * [apgdiff](https://www.apgdiff.com/) - Compares two database dump files and creates output with DDL statements that can be used to update old database schema to new one.
+* [EMS Comparer for PostgreSQL](http://download2.sqlmanager.net/download/datasheets/products/datacomparer/en/datacomparer.pdf) （[SQLManager](https://www.sqlmanager.net)）- Compare and synchronize the contents of your database with ease.
+* [plpgsqlCheck](https://pgxn.org/dist/plpgsql_check/) （[DSD 3 License](https://opensource.org/licenses/BSD-3-Clause)）- Additional tools for plpgsql functions validation。
+* [DBForge Data Compara](https://www.devart.com/dbforge/postgresql/datacompare/) - Visual data diffs comparison and deployment tool
 
 

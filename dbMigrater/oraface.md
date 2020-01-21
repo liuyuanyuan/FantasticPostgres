@@ -1,27 +1,19 @@
+# Orafce
+
 Orafce - Free and open source Oracle compatible function and operators sets.
 
 web： https://pgxn.org/dist/orafce/
 git（下载release的包）： https://github.com/orafce/orafce
 blog： https://yq.aliyun.com/articles/230
 
-常见安装问题：
-1.bison和flex缺失
-bison: Command not found
-flex: Command not found
-解决：yum -y install bison flex
-
-2.yum安装问题
-Another app is currently holding the yum lock
-https://blog.csdn.net/testcs_dn/article/details/48711805
-
-3.无法yum安装时，手动下载rpm并安装
-http://rpmfind.net/linux/rpm2html/search.php?query=bison%28x86-64%29&submit=Search+...&system=&arch=
-下载rpm包：http://rpmfind.net/linux/rpm2html/search.php?query=pkgconfig%28libpcre%29+&submit=Search+...&system=&arch=
-安装rpm包：
-rpm -ivh x.rpm
 
 
-配置使用步骤
+### 配置使用步骤
+
+0 安装依赖
+
+yum -y install bison flex
+
 1源码编译安装pg10
 cd pg10
 ./configure --prefix=/home/postgres/pgdb10/ --with-openssl --with-libxml --with-libxslt --enable-thread-safety --with-zlib --without-selinux --enable-debug
@@ -36,9 +28,8 @@ export PATH=/home/postgres/pgdb10/bin/:$PATH
 make; makeinstall
 
 3初始化数据库并创建orafce扩展
-./initdb -D ../data
-./pg_ctl -D ../data start
-[liuyuanyuan@yfslcentos71 bin]$ ./psql postgres
+```./initdb -D ../data```
+./psql postgres
 psql (10.5)
 Type "help" for help.
 
@@ -188,6 +179,10 @@ postgres=# \df dbms_alert.*
  dbms_alert | waitany        | record           | OUT name text, OUT message text, OUT status integer, timeout double precision | normal
  dbms_alert | waitone        | record           | name text, OUT message text, OUT status integer, timeout double precision     | normal
 (9 rows)
+
+
+
+
 
 
 

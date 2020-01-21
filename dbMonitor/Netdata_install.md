@@ -1,9 +1,20 @@
-Netdata 
-Github wiki:  https://github.com/firehol/netdata/wiki/Installation#linux-one-liner
-OS: only Linux
-===Source code and Architecture===
-https://my-netdata.io/infographic.html
-1.collect data via plugin
+# Netdata 
+
+### 简介
+
+**Netdata** is **distributed, real-time, performance and health monitoring for systems and applications**. It is a highly optimized monitoring agent you install on all your systems and containers.
+
+- OS: 仅支持Linux
+
+- [Github 源码](https://github.com/netdata/netdata)
+- [Github wiki](https://github.com/netdata/netdata/wiki)
+
+- [安装 Netdata](https://docs.netdata.cloud/zh/packaging/installer/)
+
+
+
+1 collect data via plugin
+
 src(C) use /proc、/sys and other Linux kernal file system to collect data；
 python.d(python) work with bash and conf file to collect data, include collecting postgres data;
 fping.plugin use bash to fping any hosts and get lagency, packet loss and uptime information.
@@ -27,19 +38,22 @@ Linux下#!/usr/bin/env bash和#!/usr/bin/bash、#!/bin/bash的比较
 而指定具体位置的方式#!/usr/bin/bash，在某些情况下更安全，因为它限制了代码注入的可能。
 可能在一些系统上/usr/bin/bash没有，而/bin/bash则一定存在的。所以/bin/bash是显示指定的优先选择。
 
-2.internal API to manange data collection
+2 internal API to manange data collection
 
-3.metric database：
+3 metric database：
+
 缺省是将一小时数据保存在内存中，这种情况下监控的内存和cpu消耗都很低；
 如果想保留几小时的历史数据可以启用KSM，因为netdata的写频率很低，所以KSM能够节省60%以上内存；
 如果想要保留更长时间的历史数据，最好将数据存储到时间序列数据库中， 可以使用graphite, opentsdb, prometheus, influxdb, kairosdb等。
 
-4.use REST Http API to provide json data to front(via Swagger)
-5. hashboard.js
-6. dashboard.css
-7. dashboard.html
-TV Client: tv.html
+4 use REST Http API to provide json data to front(via Swagger)
 
+5 hashboard.js
+
+6 dashboard.css
+
+7 dashboard.html
+TV Client: tv.html
 
 ===Front Postgres Metrics===
 Performance metrics for PostgresSQL, the object-relational database (ORDBMS).
@@ -78,7 +92,7 @@ Locks on db: postgres (postgres_local.postgres_locks)
 =autovacuum
 
 
-===install steps===
+install steps
 --------------------------------------------------------------
 step1: update centos7
 yum -y update
@@ -107,7 +121,7 @@ socket:
     user     ：'postgres'  
     password : 'postgres'  
     database : 'highgo' 
-  
+
 tcp: 
     name     : 'local'  
     database : 'postgres'  
@@ -115,14 +129,14 @@ tcp:
     password : 'postgres'  # if not provide password then must config postgres trust
     host     : 'locahost'  
     port     : 5432  
-  
+
 tcpipv4:  
     name     : 'local'  
     database : 'postgres'  
     user     : 'postgres'  
     host     : '127.0.0.1'  
     port     : 5432  
-  
+
 tcpipv6:  
     name     : 'local'  
     database : 'postgres'  
@@ -162,10 +176,13 @@ You can select the memory mode by editing netdata.conf and setting:
     cache directory = /var/cache/netdata
     
 step10: Custom Dashboards
-https://github.com/firehol/netdata/wiki/Custom-Dashboards
----------------------------------------------------------------
 
-===API details===
+https://github.com/firehol/netdata/wiki/Custom-Dashboards
+
+
+
+## API details
+
 http://192.168.100.170:19999/api/v1/allmetrics
 http://192.168.100.170:19999/api/v1/data?chart=system.io&format=array&points=300&group=average&gtime=0&options=absolute|jsonwrap|nonzero&after=-300&dimensions=in&_=1528694866751
 {
@@ -191,7 +208,9 @@ http://192.168.100.170:19999/api/v1/data?chart=system.io&format=array&points=300
 }
 
 
-===Install  details===
+
+## Install  details
+
 root@localhost Desktop]# bash <(curl -Ss https://my-netdata.io/kickstart.sh) all
 System            : Linux
 Operating System  : GNU/Linux
@@ -357,7 +376,7 @@ Group 'ceph' does not exist.
     - web files user   : netdata
     - web files group  : netdata
     - root user        : root
-
+    
     Directories
     - netdata conf dir : /etc/netdata
     - netdata log dir  : /var/log/netdata
@@ -365,7 +384,7 @@ Group 'ceph' does not exist.
     - netdata lib dir  : /var/lib/netdata
     - netdata web dir  : /usr/share/netdata/web
     - netdata cache dir: /var/cache/netdata
-
+    
     Other
     - netdata port     : 19999
 

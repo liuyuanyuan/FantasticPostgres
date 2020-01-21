@@ -140,7 +140,7 @@ apachectl status
 
 浏览器浏览: [http://127.0.0.1:5050]()
 
-## 2. 在 win10 源码安装pgAdmin4()
+## 2. 在 win10 源码安装pgAdmin4
 
 此处使用 [ python2.7.17_32bit + apache2.4.6_32bit + VCForPython27.msi ]
 
