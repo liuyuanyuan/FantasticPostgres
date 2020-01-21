@@ -1,10 +1,14 @@
 # Zabbix
 
-##### reference
+[Press Releases](https://www.zabbix.com/pr)
 
 
 
-https://www.cnblogs.com/mysql-dba/p/5010902.html
+##### Doc
+
+[官方Zabbix 3.0 从入门到精通](https://www.cnblogs.com/clsn/p/7885990.html)
+
+[Zabbix实现原理及架构详解](https://www.cnblogs.com/mysql-dba/p/5010902.html)
 
 
 

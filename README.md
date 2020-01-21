@@ -6,15 +6,14 @@
 
 > :elephant: 欢迎你为此项目添砖加瓦，你可以通过 [pull requests](https://github.com/liuyuanyuan/FantasticPostgres/pulls) 来贡献资源或者创建 [issue](https://github.com/liuyuanyuan/FantasticPostgres/issues)来开启讨论。谢谢 :)
 
-## 精华
+## 总结
 
 - [PostgreSQL 内部机制剖析](https://github.com/liuyuanyuan/PostgresInternals)
 
 - [PostgreSQL 外部数据封装器](pgFDW/README.md)
-- [PostgreSQL 数据库可视化](dbVisualizer/README.md)
-- [Oracle2PG 数据库迁移篇](dbMigrator/README.md)
-
-
+- [PostgreSQL 数据库可视化](dbVisualize/README.md)
+- [PostgreSQL 数据库监控](dbMonitor/README.md)
+- [Oracle2PG 数据库迁移篇](dbMigrate/README.md)
 
 ## 清单
 
