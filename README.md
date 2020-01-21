@@ -13,7 +13,8 @@
 - [PostgreSQL 外部数据封装器](pgFDW/README.md)
 - [PostgreSQL 数据库可视化](dbVisualize/README.md)
 - [PostgreSQL 数据库监控](dbMonitor/README.md)
-- [Oracle2PG 数据库迁移篇](dbMigrate/README.md)
+- [Oracle 2 PG 数据库迁移](dbMigrate/README.md)
+- 
 
 ## 清单
 
