@@ -11,7 +11,7 @@
 - [PostgreSQL 内部机制剖析](https://github.com/liuyuanyuan/PostgresInternals)
 
 - [PostgreSQL 外部数据封装器](pgFDW/README.md)
-- [PostgreSQL 数据库可视化](pgVisualizer/README.md)
+- [PostgreSQL 数据库可视化](dbVisualizer/README.md)
 - [Oracle2PG 数据库迁移篇](dbMigrator/README.md)
 
 
