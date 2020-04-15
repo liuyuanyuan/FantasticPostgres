@@ -1,3 +1,8 @@
+==null值的运算==
+       Oracle        PostgreSQL
+sum    当作0          当作0
++      遇null得null   遇null得null
+||     当作‘’         遇null得null（用coalese(col,'')）
 
 ==浮点类型(不精确的类型)==
 Oracle浮点类型：float，binary_float，binary_double
